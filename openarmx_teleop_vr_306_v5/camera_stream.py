@@ -16,13 +16,17 @@ class RgbdColorCamera:
     def __init__(
             self, *, robot_model='autolife_s1', robot_version='robot_v3_1',
             module_name='mod_camera_rgbd_head', output_name='color',
-            maximum_fps=20.0, jpeg_quality=75):
+            maximum_fps=20.0, jpeg_quality=75, output_width=0, output_height=0):
         self.robot_model = str(robot_model)
         self.robot_version = str(robot_version)
         self.module_name = str(module_name)
         self.output_name = str(output_name)
         self.maximum_fps = max(1.0, min(30.0, float(maximum_fps)))
         self.jpeg_quality = max(40, min(95, int(jpeg_quality)))
+        self.output_width = max(0, int(output_width))
+        self.output_height = max(0, int(output_height))
+        if bool(self.output_width) != bool(self.output_height):
+            raise ValueError('output_width and output_height must be configured together')
         self._condition = threading.Condition()
         self._stop = threading.Event()
         self._thread = None
@@ -114,6 +118,8 @@ class RgbdColorCamera:
             'online': bool(frame_id >= 0 and age is not None and age < 1.0),
             'width': int(meta.get('width', 0) or 0),
             'height': int(meta.get('height', 0) or 0),
+            'source_width': int(meta.get('source_width', meta.get('width', 0)) or 0),
+            'source_height': int(meta.get('source_height', meta.get('height', 0)) or 0),
             'pixel_format': str(meta.get('pixel_format_str', 'BGR')),
             'fps': round(fps, 1),
             'frame_version': int(frame_id),
@@ -198,6 +204,13 @@ class RgbdColorCamera:
                 # The SDK frame may be a view into a two-slot shared-memory
                 # ring.  Own one contiguous latest-frame copy so the producer
                 # cannot overwrite pixels while the WebRTC encoder reads them.
+                source_height, source_width = frame.shape[:2]
+                if (self.output_width and self.output_height
+                        and (source_width, source_height) != (self.output_width, self.output_height)):
+                    if source_width * self.output_height != source_height * self.output_width:
+                        raise RuntimeError('configured video output would distort the source aspect ratio')
+                    frame = cv2.resize(frame, (self.output_width, self.output_height),
+                                       interpolation=cv2.INTER_AREA)
                 bgr = frame.copy(order='C')
                 with self._condition:
                     jpeg_requested = now <= self._jpeg_demand_until
@@ -216,7 +229,8 @@ class RgbdColorCamera:
                     if jpeg is not None:
                         self._jpeg = jpeg
                         self._jpeg_frame_id = int(frame_id)
-                    self._meta = dict(meta)
+                    self._meta = dict(meta, source_width=source_width, source_height=source_height,
+                                      width=bgr.shape[1], height=bgr.shape[0], data_size=bgr.nbytes)
                     self._last_frame_time = now
                     self._frame_times.append(now)
                     self._last_error = ''

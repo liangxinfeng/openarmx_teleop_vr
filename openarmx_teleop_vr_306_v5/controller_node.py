@@ -30,6 +30,7 @@ from .body_height import (
     estimate_body_lowering,
     measured_reverse_squat,
 )
+from .manual_squat import ManualSquatGuard
 from .kinematics import IndependentArmKinematics
 from .mink_kinematics import MinkKinematics
 from .grip_session_ik import GripSessionIK, SessionTrackingError
@@ -2214,6 +2215,43 @@ class IndependentArmController(Node):
                 self._kinematics.joint_q['Joint_Waist_Pitch']])))
         return target
 
+    def _manual_squat_snapshot(self, now):
+        guard = getattr(self, '_manual_squat_guard', None)
+        if guard is None:
+            guard = self._manual_squat_guard = ManualSquatGuard()
+        legs = None if self._feedback is None else self._feedback.as_dict()['leg_waist']
+        active = bool(getattr(self, '_body_height_active', False))
+        busy = bool(self._reset_active or self._enable_pending or self._estop_latched
+                    or (active and (getattr(self, '_body_height_input_absolute', False)
+                        or abs(self._body_height_last_direction) > 1.e-6)))
+        result = guard.observe(legs, self._feedback_time, now,
+            float(self.get_parameter('feedback_timeout_sec').value),
+            getattr(self, '_body_height_reverse_mode', False), busy)
+        if not self._body_height_control_enabled:
+            result.update(can_switch=False, message='身体高度控制未开启')
+        elif not self._hardware_enabled:
+            result.update(can_switch=False, message='请先使能遥操')
+        result['ack'] = dict(getattr(self, '_manual_squat_ack', {}))
+        return result
+
+    def _select_manual_squat_mode(self, payload, now):
+        # A mode selection changes no target, progress, enable flag or command.
+        with self._lock:
+            request_id = payload.get('request_id', '')
+            if request_id and request_id == getattr(self, '_manual_squat_ack', {}).get('request_id'):
+                return
+            ack = {'request_id': str(request_id)[:96], 'accepted': False}
+            try:
+                mode, request_id = ManualSquatGuard.validate_request(payload, now)
+                snapshot = self._manual_squat_snapshot(now)
+                if not snapshot['can_switch']:
+                    raise ValueError(snapshot['message'])
+                self._body_height_reverse_mode = mode == 'reverse'
+                ack.update(accepted=True, mode=mode, message=('已切换为反向下蹲' if mode == 'reverse' else '已切换为正向下蹲'))
+            except (TypeError, ValueError) as error:
+                ack['message'] = str(error)
+            self._manual_squat_ack = ack
+
     def _on_body_height_command(self, message):
         """Apply a watchdog-bounded, coordinated ankle/knee/waist command."""
         if not self._body_height_control_enabled:
@@ -2223,6 +2261,9 @@ class IndependentArmController(Node):
             payload = json.loads(message.data)
             if not isinstance(payload, dict):
                 raise ValueError('body-height command must be a JSON object')
+            if 'select_squat_mode' in payload:
+                self._select_manual_squat_mode(payload, now)
+                return
             enabled = payload.get('enabled') is True
             direction = float(payload.get('direction', 0.0))
             target_level = payload.get('target_level')
@@ -2524,7 +2565,8 @@ class IndependentArmController(Node):
             if self._feedback is None or now - self._feedback_time > float(
                     self.get_parameter('feedback_timeout_sec').value):
                 return
-            # Config is positive downward; model/vendor pitch is negative.
+            # 345 uses the S3 +Y neck axis: positive pitch looks down.
+            # Keep the catalog angle positive; do not apply the old S2 sign.
             # Preserve roll/yaw, which the task did not request changing.
             target = np.asarray(self._feedback.neck, dtype=float).copy()
             idx = self._kinematics.joint_q['Joint_Neck_Pitch']
@@ -2536,19 +2578,20 @@ class IndependentArmController(Node):
                 self._task_head_target = None
                 return
             # User range is the nominal URDF range. Keep the existing soft
-            # margin (283: 45 degrees nominal minus 2 degrees protection).
+            # margin supplied by the active S3 kinematics model.
             # A valid nominal request at the boundary saturates safely; it is
             # not a takeover/reset failure. Report the exact applied target so
             # the task coordinator verifies encoders against that same value.
-            target[1] = float(np.clip(-pitch, lower, upper))
-            effective = -float(target[1])
+            target[1] = float(np.clip(pitch, lower, upper))
+            effective = float(target[1])
             if request_id != self._task_head_request_id:
                 self.get_logger().info(
                     f'task head preset: id={request_id}, requested={pitch:.3f}deg, '
-                    f'effective={effective:.3f}deg, safe_max={-lower:.3f}deg')
+                    f'effective={effective:.3f}deg, joint_target={target[1]:.3f}deg, safe_max={upper:.3f}deg')
             self._task_head_goal = {
                 'request_id': request_id, 'requested_deg': pitch,
-                'effective_deg': effective, 'safe_max_deg': -lower,
+                'effective_deg': effective, 'safe_max_deg': upper,
+                'joint_target_deg': float(target[1]),
             }
             self._task_head_cancel_reason = ''
             self._task_head_target = target
@@ -4996,6 +5039,7 @@ class IndependentArmController(Node):
             'waist_follow_anchor_x': dict(self._waist_follow_anchor_x),
             'waist_follow_extension_m': self._waist_follow_extension_m,
             'waist_follow_pitch_target_deg': self._waist_follow_pitch_target_deg,
+            'manual_squat': IndependentArmController._manual_squat_snapshot(self, now),
             'body_height': {
                 'enabled': self._body_height_control_enabled,
                 'active': self._body_height_active,

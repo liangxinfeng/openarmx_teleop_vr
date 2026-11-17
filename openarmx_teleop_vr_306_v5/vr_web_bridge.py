@@ -140,6 +140,10 @@ class VrWebBridge(Node):
         self.declare_parameter('disable_hardware_on_last_disconnect', False)
         self.declare_parameter('rgbd_camera_enabled', True)
         self.declare_parameter('rgbd_camera_maximum_fps', 30.0)
+        self.declare_parameter('rgbd_camera_expected_width', 640)
+        self.declare_parameter('rgbd_camera_expected_height', 480)
+        self.declare_parameter('rgbd_camera_output_width', 0)
+        self.declare_parameter('rgbd_camera_output_height', 0)
         self.declare_parameter('rgbd_camera_jpeg_quality', 68)
 
         self._publisher = self.create_publisher(
@@ -205,6 +209,8 @@ class VrWebBridge(Node):
                 maximum_fps=float(
                     self.get_parameter('rgbd_camera_maximum_fps').value
                 ),
+                output_width=int(self.get_parameter('rgbd_camera_output_width').value),
+                output_height=int(self.get_parameter('rgbd_camera_output_height').value),
                 jpeg_quality=int(
                     self.get_parameter('rgbd_camera_jpeg_quality').value
                 ),
@@ -254,6 +260,12 @@ class VrWebBridge(Node):
 
     async def _api_config(self, request):
         del request
+        camera_status = (self._rgbd_camera.status()
+                         if self._rgbd_camera is not None else {})
+        camera_width = int(camera_status.get('width') or
+                           self.get_parameter('rgbd_camera_expected_width').value)
+        camera_height = int(camera_status.get('height') or
+                            self.get_parameter('rgbd_camera_expected_height').value)
         return web.json_response(
             {
                 'network': {
@@ -281,8 +293,10 @@ class VrWebBridge(Node):
                     'cameras': ([{
                         'id': 'rgbd_head_color',
                         'name': '头部深度相机 RGB',
-                        'width': 640,
-                        'height': 480,
+                        'width': camera_width,
+                        'height': camera_height,
+                        'frame_size_source': ('live' if camera_status.get('width')
+                                              and camera_status.get('height') else 'configured'),
                         'fps': int(
                             self.get_parameter(
                                 'rgbd_camera_maximum_fps'

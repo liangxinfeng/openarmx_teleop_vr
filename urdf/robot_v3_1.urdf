@@ -166,7 +166,7 @@
     <child
       link="Link_Knee_to_Waist_Pitch" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-2.71"
       upper="2.71"

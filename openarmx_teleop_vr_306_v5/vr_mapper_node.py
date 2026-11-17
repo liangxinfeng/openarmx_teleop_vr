@@ -21,6 +21,7 @@ from std_msgs.msg import String
 from std_srvs.srv import SetBool, Trigger
 
 from .desktop_mode import DesktopModeGate, world_to_operator_yaw_rotation
+from .operator_heading import StableOperatorHeading
 from .qos import latest_sample_qos
 from .reset_state import GripRearmState, QuickResetState, ClutchedTrigger
 from .teleop_core import (
@@ -118,6 +119,7 @@ class IndependentVrMapper(Node):
         self._ik_reanchor_pending = {'left': False, 'right': False}
         self._head_sample = None
         self._head_sample_time = 0.0
+        self._operator_heading = StableOperatorHeading()
         self._desktop_gate = DesktopModeGate(
             settle_seconds=self.get_parameter(
                 'desktop_mode_settle_seconds').value,
@@ -425,6 +427,7 @@ class IndependentVrMapper(Node):
         self._grip_false_since = {'left': None, 'right': None}
         self._head_sample = None
         self._head_sample_time = 0.0
+        self._operator_heading = StableOperatorHeading()
         self._head_mapper.release()
         self._wearable_operator_yaw_deg = {'left': 0.0, 'right': 0.0}
         self._wearable_position_rotation = {
@@ -743,6 +746,8 @@ class IndependentVrMapper(Node):
             if head_sample is not None:
                 self._head_sample = head_sample
                 self._head_sample_time = now
+                if head_sample.quaternion is not None:
+                    self._operator_heading.update(head_sample.quaternion)
             if self._desktop_gate.enabled:
                 was_ready = self._desktop_gate.ready
                 ready, reason = self._desktop_gate.observe(
@@ -1197,21 +1202,18 @@ class IndependentVrMapper(Node):
                                 or self._head_sample.quaternion is None
                             ):
                                 raise ValueError('fresh HMD quaternion unavailable')
-                            operator_yaw = webxr_yaw_deg_from_quaternion(
-                                self._head_sample.quaternion
-                            )
+                            if now-self._head_sample_time > float(self.get_parameter('head_input_timeout').value):
+                                raise ValueError('等待新鲜头显姿态，暂不接管')
+                            operator_yaw = self._operator_heading.value()
                             self._wearable_operator_yaw_deg[side] = operator_yaw
                             self._wearable_position_rotation[side] = (
                                 world_to_operator_yaw_rotation(operator_yaw)
                             )
-                        except ValueError:
-                            # A near-vertical HMD has no stable horizontal yaw.
-                            # Identity is deterministic and the next explicit
-                            # clutch can capture a valid facing direction.
-                            self._wearable_operator_yaw_deg[side] = 0.0
-                            self._wearable_position_rotation[side] = np.eye(
-                                3, dtype=float
-                            )
+                        except ValueError as error:
+                            # Never invent a world-zero basis when gaze is
+                            # vertical or feedback stale. No arm target sent.
+                            self._last_reason = str(error)
+                            continue
                     operator_rotation = self._wearable_position_rotation[side]
                     mapping_sample = ControllerSample(
                         position=operator_rotation @ sample.position,
@@ -1366,6 +1368,8 @@ class IndependentVrMapper(Node):
                         float(self._wearable_operator_yaw_deg['right']), 2
                     ),
                     'recalibrates_after_reset': True,
+                    'holding_heading_while_looking_down': self._operator_heading.held_for_tilt,
+                    'reliable_heading_deg': self._operator_heading.yaw,
                 },
                 'head_follow': {
                     'enabled': bool(
