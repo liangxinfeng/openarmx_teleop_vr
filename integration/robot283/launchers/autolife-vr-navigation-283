@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-exec /usr/bin/python3 \
-  /home/ubuntu/ros2_ws/src/openarmx_teleop_vr_navigation_306/scripts/vr_navigation_desktop_app.py \
-  --robot-id 283 \
-  --entry /home/ubuntu/vr283nav
