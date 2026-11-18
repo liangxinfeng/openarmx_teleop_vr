@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_PYTHON="/home/ubuntu/miniconda3/envs/robot_env/bin/python"
+BASE_PYTHON="/home/ubuntu/ros2_ws/venvs/openarmx_v4_placo/bin/python"
 VENV_DIR="/home/ubuntu/ros2_ws/venvs/openarmx_v4_placo"
 
 if [ ! -x "$BASE_PYTHON" ]; then
@@ -16,4 +16,4 @@ fi
 "$VENV_DIR/bin/python" -m pip install --disable-pip-version-check \
   'placo==0.9.17'
 
-echo "V5 Placo environment ready: $VENV_DIR"
+echo "V4 Placo environment ready: $VENV_DIR"

@@ -32,8 +32,6 @@ const state = {
   realtimeLatestEncodedPacket: null,
   realtimeWatchdogTimer: null,
   xrSession: null,
-  observerOnly: new URLSearchParams(window.location.search || '').get('viewer') === '1',
-  vrControlCapable: false,
   brandHud: null,
   headText: null,
   vrNotice: null,
@@ -424,38 +422,7 @@ function renderHardwareControl() {
   const backendState = String(teleop?.state || '').toLowerCase();
   const websocketReady = state.websocket?.readyState === WebSocket.OPEN;
   const controlling = hardwareControlIsOnOrBusy();
-  if (state.observerOnly || (!state.vrControlCapable && !state.xrSession)) {
-    card.classList.add('is-off');
-    label.textContent = '桌面状态预览，不占用VR控制连接';
-    detail.textContent = '请在头显浏览器打开本页面并进入VR。此页仅查看状态与画面。';
-    button.disabled = true;
-    setHardwareButtonText(button, '请在头显中操作');
-    if (waistToggle) waistToggle.disabled = true;
-    if (headToggle) headToggle.disabled = true;
-    const calibration = document.getElementById('reachCalibrationButton');
-    if (calibration) calibration.disabled = true;
-    return;
-  }
   const backendReason = teleop?.backend?.reason || teleop?.backend?.detail || '';
-  const ik5 = teleop?.backend?.ik_session_v5;
-  const ik5Label = document.getElementById('v5SessionStatus');
-  if (ik5Label && ik5) {
-    const names = {left: '左臂', right: '右臂'};
-    const active = (ik5.active || []).map(s => names[s]).join('、');
-    const blocked = (ik5.require_regrip || []).map(s => names[s]).join('、');
-    const error = Math.max(0, ...Object.values(ik5.tracking_error_deg || {}));
-    const labels = {tracking: '跟随中', converged: '已收敛', plateau: '受限停滞，未到位'};
-    const armDetails = Object.entries(ik5.retargeting || {})
-      .filter(([side]) => (ik5.active || []).includes(side))
-      .map(([side, info]) => `${names[side]} ${labels[info.state] || '求解中'} · 位置 ${(1000 * (info.position_error_m || 0)).toFixed(1)}mm · 姿态 ${(info.orientation_error_deg || 0).toFixed(2)}°`)
-      .join('；');
-    const solveMs = teleop?.backend?.ik?.solve_time_ms;
-    ik5Label.textContent = blocked ? `${blocked}需要松开握持键后重新按下` :
-      `Mink / quadprog · ${active ? active + '臂形参考已锁定' : '等待握持接管'} · 实测跟随误差 ${error.toFixed(1)}°` +
-      (Number.isFinite(solveMs) ? ` · 求解 ${solveMs.toFixed(1)}ms` : '') +
-      (armDetails ? ` · ${armDetails}` : '');
-  }
-
 
   if (!teleop) {
     card.classList.add('is-error');
@@ -653,36 +620,6 @@ async function refreshHardwareStatus() {
       );
     }
     state.teleop.lastHeadRecalibrationRequired = headRecalibrationRequired;
-    const reach = state.teleop.status?.reach_retargeting;
-    const reachLabel = document.getElementById('reachCalibrationStatus');
-    if (reachLabel && reach) reachLabel.textContent = reach.message + (reach.state === 'countdown' ? ` · ${reach.remaining ?? 3}秒` : '');
-    const reachBusy = ['countdown', 'waiting_tracking', 'sampling'].includes(reach?.state);
-    if (reachBusy) {
-      const progress = reach.state === 'sampling' ? ` ${Math.round((reach.progress || 0) * 100)}%` : '';
-      showVrNotice(`伸展标定${progress}\n${reach.message}`, 600, '#FFD166');
-    }
-    if (reach && state.teleop.lastReachSequence !== reach.sequence) {
-      if (reach.sequence > 0 && !reachBusy) showVrNotice(reach.message, 6500, reach.state === 'failed' ? '#FF6B6B' : '#79E4B1');
-      state.teleop.lastReachSequence = reach.sequence;
-    }
-    const resetStatus = state.teleop.status?.quick_reset;
-    if (state.xrSession && resetStatus?.holding) {
-      const progress = Math.round(100 * (resetStatus.hold_progress || 0));
-      showVrNotice(`X+A 复位确认 ${progress}%\n继续同时按住，满1秒后复位`, 500, '#FFD166');
-    }
-    const resetResult = resetStatus?.last_result;
-    if (resetResult && resetResult.sequence !== state.teleop.lastResetResultSequence) {
-      state.teleop.lastResetResultSequence = resetResult.sequence;
-      if (state.xrSession && resetResult.sequence > 0 && resetResult.success === false) {
-        const raw = String(resetResult.message || '');
-        const reason = raw.includes('collision') ? '复位路径未通过碰撞检查'
-          : raw.includes('not enabled') || raw.includes('must be enabled') ? '请先完成遥操使能'
-          : raw.includes('pending') ? '使能尚未完成，请稍后再按'
-          : raw.includes('timed out') ? '复位请求超时，请松开后重试'
-          : raw.includes('unavailable') ? '复位服务未连接' : raw;
-        showVrNotice(`复位未执行：${reason}\n松开X+A后可重试`, 6500, '#FF6B6B');
-      }
-    }
     const quickResetActive = state.teleop.status?.quick_reset?.active === true;
     if (
       state.xrSession
@@ -1031,20 +968,6 @@ async function loadConfig() {
   return state.config;
 }
 
-async function detectVrControlCapability() {
-  if (state.observerOnly) { state.vrControlCapable = false; return false; }
-  try {
-    state.vrControlCapable = Boolean(
-      navigator.xr && typeof navigator.xr.isSessionSupported === 'function'
-      && await navigator.xr.isSessionSupported('immersive-vr')
-    );
-  } catch (error) {
-    state.vrControlCapable = false;
-    console.warn('Immersive VR capability check failed:', error);
-  }
-  return state.vrControlCapable;
-}
-
 function websocketUrl() {
   const path = state.config?.network?.websocket_path || '/ws';
   const url = new URL(`wss://${window.location.host}${path}`);
@@ -1053,9 +976,6 @@ function websocketUrl() {
 }
 
 function connectWebSocket() {
-  // A desktop status page must never claim the bridge's single operator slot.
-  // A real XR session also proves capability if the initial browser probe fails.
-  if (state.observerOnly || (!state.vrControlCapable && !state.xrSession)) return;
   if (state.websocket && [WebSocket.CONNECTING, WebSocket.OPEN].includes(state.websocket.readyState)) return;
   const url = websocketUrl();
   const websocket = new WebSocket(url);
@@ -1067,7 +987,6 @@ function connectWebSocket() {
     setStatus(`VR data connected: ${url}`);
     refreshHardwareStatus();
     void connectRealtimeChannel();
-    state.image.cameras.forEach(camera => { void startCameraFeed(cameraId(camera)); });
   };
   websocket.onerror = () => {
     if (state.websocket === websocket) setStatus('VR data connection error');
@@ -1189,16 +1108,15 @@ function startRealtimeWatchdog() {
         && now - cameraState.lastVideoFrameAt > 1200
       ))
     );
-    if (peerBad || bufferedStuck || acknowledgementStale) {
-      // Keep the existing control-path watchdog and immediate fallback.
-      retireRealtimeConnection(peer, channel, state.realtimeGeneration);
-      return;
-    }
-    if (cameraStalled) {
-      // Video may stall while control ACKs remain healthy. Degrade the camera
-      // alone; do not repeatedly tear down a healthy teleoperation channel.
-      useLatestJpegFallback('video stalled; control channel remains active');
-    }
+    if (!peerBad && !bufferedStuck && !acknowledgementStale && !cameraStalled) return;
+    // A WebRTC DataChannel can remain `open` after the UDP path has stopped
+    // delivering. Immediately fall back to the live WebSocket and recreate
+    // the peer instead of black-holing every future Grip/X+A frame.
+    retireRealtimeConnection(
+      peer,
+      channel,
+      state.realtimeGeneration
+    );
   }, 250);
 }
 
@@ -1388,7 +1306,7 @@ function createBrandHud() {
   group.setAttribute('position', '0.72 0.88 0');
 
   const mark = document.createElement('a-text');
-  mark.setAttribute('value', 'AUTOLIFE 306 V5');
+  mark.setAttribute('value', 'AUTOLIFE 306 V4');
   mark.setAttribute('align', 'center');
   mark.setAttribute('anchor', 'center');
   mark.setAttribute('baseline', 'center');
@@ -2092,13 +2010,6 @@ function startCameraWatchdog() {
 async function startCameraFeed(id) {
   const cameraState = state.image.states.get(id);
   if (!cameraState || cameraState.cameraConnectInFlight) return;
-  // An observer must not replace the operator's single WebRTC video peer.
-  // Preserve read-only desktop video using the existing latest-JPEG transport.
-  if (state.observerOnly || (!state.vrControlCapable && !state.xrSession)
-      || state.websocket?.readyState !== WebSocket.OPEN) {
-    void startLatestJpegStream(id);
-    return;
-  }
   cameraState.img.setAttribute('referrerpolicy', 'no-referrer');
   cameraState.img.decoding = 'async';
 
@@ -2373,10 +2284,6 @@ AFRAME.registerComponent('telegrip-vr-bridge', {
       this.releaseAllControllerButtons();
       this.resetDesktopModeChord();
       state.xrSession = this.el.renderer.xr.getSession();
-      if (!state.observerOnly) {
-        state.vrControlCapable = true;
-        connectWebSocket();
-      }
       ensureVrNotice();
       ensureHgStatusHud();
       updateHgStatusHud(state.teleop.status?.hg_dagger, { forceCurrent: true });
@@ -2747,7 +2654,7 @@ AFRAME.registerComponent('telegrip-vr-bridge', {
         const serverReady = state.websocket?.readyState === WebSocket.OPEN;
         state.headText.setAttribute(
           'value',
-          `AUTOLIFE 306 V5 / QUEST MIDDLE\n` +
+          `AUTOLIFE 306 V4 / QUEST MIDDLE\n` +
           `Server: ${serverReady ? 'CONNECTED' : 'DISCONNECTED'} | Head: WEBXR READY\n` +
           `Head Follow: ${headFollowEnabledFromStatus() ? 'ON' : 'OFF'} | Pose: ${state.teleop.xrPoseFresh ? 'LIVE' : 'STALE'}\n` +
           `Inputs: ${this.inputSourceSummary()}\n` +
@@ -2780,7 +2687,7 @@ AFRAME.registerComponent('telegrip-vr-bridge', {
       const rightReady = Boolean(rightController?.position);
       state.headText.setAttribute(
         'value',
-        `AUTOLIFE 306 V5 / QUEST MIDDLE\n` +
+        `AUTOLIFE 306 V4 / QUEST MIDDLE\n` +
         `Server: ${serverReady ? 'CONNECTED' : 'DISCONNECTED'} | ` +
         `Left: ${leftReady ? 'READY' : 'MISSING'} | Right: ${rightReady ? 'READY' : 'MISSING'}\n` +
         `Head Follow: ${headFollowEnabledFromStatus() ? 'ON' : 'OFF'} | Pose: ${state.teleop.xrPoseFresh ? 'LIVE' : 'STALE'}\n` +
@@ -2842,7 +2749,6 @@ async function init() {
   setServerUrl();
   setStatus('Loading configuration...');
   await loadConfig();
-  await detectVrControlCapability();
 
   const scene = document.querySelector('a-scene');
   if (scene.hasLoaded) {
@@ -2894,13 +2800,5 @@ document.addEventListener('DOMContentLoaded', () => {
   init().catch(error => {
     console.error('Telegrip startup failed:', error);
     setStatus(`Startup failed: ${error.message}`);
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('reachCalibrationButton')?.addEventListener('click', async () => {
-    const label = document.getElementById('reachCalibrationStatus');
-    try { const r = await fetch('/api/calibrate-reach', {method:'POST'}); const d = await r.json(); label.textContent = d.message; }
-    catch (e) { label.textContent = `标定服务请求失败：${e.message}`; }
   });
 });

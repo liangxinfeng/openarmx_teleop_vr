@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Autolife 306 VR Teleoperation and Navigation</title>
+    <meta name="description" content="Autolife 306 VR arm teleoperation and navigation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vendor/aframe.min.js"></script>
+    <script src="vr_app.js?v=reset-stop-20261101-3" defer></script>
+    <script src="vr_custom_controls.js?v=yundie-283-hotel-patrol-v2026102802" defer></script>
+    <script src="hotel_controls.js?v=yundie-283-hotel-patrol-v2026102905" defer></script>
+    <script src="reset_controls.js?v=reset-stop-20261101-3" defer></script>
+    <script src="nav_app.js?v=task-pose-retry-20261116" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav_styles.css">
+  </head>
+  <body>
+    <main id="launchPanel" class="launch-panel">
+      <div class="brand-logo">AUTOLIFE</div>
+      <div class="title">306 V4 遥操与导航</div>
+      <div id="serverUrl" class="server-url">loading...</div>
+      <section id="hardwareControl" class="hardware-control" aria-live="polite">
+        <div class="hardware-status-row">
+          <span id="hardwareStatusDot" class="hardware-status-dot"></span>
+          <span id="hardwareStatusLabel" class="hardware-status-label">真机遥操状态读取中</span>
+        </div>
+        <div id="hardwareStatusDetail" class="hardware-status-detail">
+          正在等待遥操节点状态……
+        </div>
+        <div class="follow-options">
+        <label class="follow-option" for="waistFollowToggle">
+          <input id="waistFollowToggle" type="checkbox" disabled>
+          <span>
+            <strong>腰部跟随</strong>
+            <small>不勾选时，腰部在复位姿态保持固定</small>
+          </span>
+        </label>
+        <label class="follow-option" for="headFollowToggle">
+          <input id="headFollowToggle" type="checkbox" disabled>
+          <span>
+            <strong>头部跟随</strong>
+            <small>使能与复位后默认锁定；进入 VR 后按 B 开启或关闭</small>
+          </span>
+        </label>
+        <label class="follow-option" for="showroomModeToggle">
+          <input id="showroomModeToggle" type="checkbox" disabled>
+          <span>
+            <strong>展厅模式</strong>
+            <small>单航点按任务流程执行；语音需另外勾选</small>
+          </span>
+        </label>
+        <label class="follow-option" for="voiceEnabledToggle">
+          <input id="voiceEnabledToggle" type="checkbox" disabled>
+          <span><strong>语音播报</strong><small id="voiceHealthLabel">未勾选不加载播报引擎、不播放导航或任务提示</small></span>
+        </label>
+        </div>
+        <button id="hardwareToggleButton" class="hardware-toggle-button" type="button" disabled>
+          按住 1 秒，到达默认姿态后使能
+        </button>
+        <div class="hardware-safety-hint">
+          长按后会安全进入 SYNC，再限速到达与 X+A 相同的系统默认姿态。请确认机器人周围无人、无障碍物。
+        </div>
+        <div class="hardware-safety-hint">
+          桌面双臂模式：同时长按左右摇杆按键 1 秒切换。切换后先放稳头显和双手柄，提示就绪后松开并重新按腰键接管。
+        </div>
+        <div class="navigation-hint">
+          <strong>VR 导航：</strong>任意画面下单击左摇杆键均可接管/取消底盘；左摇杆控制前后/横移，右摇杆控制转向。接管后 X 降低身体、Y 升高身体。按 Y 打开导航，右摇杆键显示菜单；夹爪闭合宽度项用右摇杆左右调节。
+        </div>
+      </section>
+      <button id="startVrButton" class="start-button" type="button">进入 VR 遥操</button>
+      <button id="cameraModeButton" class="camera-mode-button" type="button">
+        图像模式：进入VR后短按 Y 切换；长按 X+A 1秒常规复位，长按 Y+B 1秒打开复位选择，三种方式均保持夹爪。
+      </button>
+      <div id="statusText" class="status-text">正在准备...</div>
+    </main>
+
+    <a-scene
+      vr-mode-ui="enabled: false"
+      webxr="referenceSpaceType: local-floor; optionalFeatures: local-floor, bounded-floor"
+      renderer="antialias: true; colorManagement: true"
+      background="color: #05070A">
+      <a-entity webxr-passthrough="referenceSpaceType: local-floor"></a-entity>
+      <a-entity id="cameraRig" position="0 1.55 -2.0"></a-entity>
+
+      <!-- Use the WebXR-standard tracker so non-Oculus controllers expose the
+           same handed poses/gamepad data as Quest Touch controllers. -->
+      <a-entity id="leftHand" tracked-controls="hand: left"></a-entity>
+      <a-entity id="rightHand" tracked-controls="hand: right"></a-entity>
+
+      <a-entity light="type: ambient; intensity: 1.0"></a-entity>
+    </a-scene>
+  </body>
+</html>

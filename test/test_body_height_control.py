@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from openarmx_teleop_vr_306_v5.body_height import (
+from openarmx_teleop_vr_306_v4.body_height import (
     MAX_BODY_LOWERING_M,
     body_height_joint_targets,
     coordinated_body_height_targets,
@@ -18,7 +18,7 @@ def test_body_height_curve_matches_control_center_profile():
 def test_controller_has_watchdog_guarded_navigation_only_height_path():
     source = (
         Path(__file__).parents[1]
-        / 'openarmx_teleop_vr_306_v5'
+        / 'openarmx_teleop_vr_306_v4'
         / 'controller_node.py'
     ).read_text(encoding='utf-8')
     assert "'body_height_control_enabled': False" in source

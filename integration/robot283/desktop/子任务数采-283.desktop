@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=子任务数采-283
+Comment=启动时填写总任务和子任务，配合原厂 VR App 使用
+Exec=/home/ubuntu/.local/bin/collector-subtask-283
+Path=/home/ubuntu/CB_Autolife_Data_Collector
+Icon=camera-video
+Terminal=true
+StartupNotify=true
+Categories=Science;Robotics;

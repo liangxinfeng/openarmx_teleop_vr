@@ -1,0 +1,1310 @@
+[
+  {
+    "path": "openarmx_teleop_vr_306_v4/AI_MIGRATION_GUIDE.md",
+    "bytes": 2186,
+    "sha256": "21642dde67fbfac936a2193715edfa1b99ecac12f9fd149bd72ab99120d81d74",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/NOTICE",
+    "bytes": 835,
+    "sha256": "c250e34453686b12eae7d4ab0c4428bc179c4db768c795780bd12807c0eb13b2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/README.md",
+    "bytes": 2340,
+    "sha256": "4ed1a4b02994401bf986f634cdcaabc1aedf6fe05779dde52e3e93b66b6354bd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/THIRD_PARTY_LICENSES.md",
+    "bytes": 1117,
+    "sha256": "e44f8ec16073bbe217c321a9b5bf1db398f1fa38a9c79897ed8929bcbd8c2fe5",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/config/controller.yaml",
+    "bytes": 10982,
+    "sha256": "ea685fb44119de20180cba8388aa4b342f1deb31f0a583ca00b2d6c5b4f1f651",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/config/teleop.yaml",
+    "bytes": 6860,
+    "sha256": "dcbfb677384aa403afb6dbb6e75fd4c74cbe8475547e705629f290f3897c3b01",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/integration/README.md",
+    "bytes": 1562,
+    "sha256": "4a4146495d694d9fed68d4a96e546429f858c24f1896ffdb25eec16bab2c6815",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/integration/run_transport_integration.sh",
+    "bytes": 2311,
+    "sha256": "3f60ee91106d5453e610faf2750c38bc4eb7490d4e9e49237b0eb76a958b987e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/integration/transport_integration_client.py",
+    "bytes": 14155,
+    "sha256": "16f14304184f859ea1b8c777537d95892fad49270af41f583cdba817f9e1ddce",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/launch/full_vr_teleop.launch.py",
+    "bytes": 13816,
+    "sha256": "69a1fbdd82f81fc10663620017c6cde3f3fcef788d862ca1be7483f297f8d670",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Ankle_to_Knee.STL",
+    "bytes": 277984,
+    "sha256": "1afc2714313f183d12ee0d68850950baec95ea286ab26f2f61d82290df4cc000",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Gripper_Left.STL",
+    "bytes": 8484,
+    "sha256": "9f3690b61c343a496bd7d209e7bb289357efa3fb0ac9abd02c8f324cca954215",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Gripper_Right.STL",
+    "bytes": 8484,
+    "sha256": "80642a3e4708a29316d34ec9bdbd11d98a0dc121ea7069da09cf7884f0bab65b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Head_Back.STL",
+    "bytes": 61884,
+    "sha256": "18003a8af0a5483b607753f0de981f7ccb7851432cef18f87045fea6680156d3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Head_Forehead.STL",
+    "bytes": 65784,
+    "sha256": "9c16bd112c09fe8476be06acddd7ade7df53f18f555aa89cc80449264e0a6fb6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Head_Left_Eye.STL",
+    "bytes": 60984,
+    "sha256": "c742d0e313ce92af131ccdabb16f901557583b912ef4544125ff0b5052876f23",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Camera_Head_Right_Eye.STL",
+    "bytes": 60984,
+    "sha256": "da735a9cb7b2ef12fd15afc024b974642d904b96a0573d45d73d23be292b5359",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Ground_Vehicle.STL",
+    "bytes": 1140134,
+    "sha256": "8dd85b2d8c0b5ea2df730c99c355f99e635b77c73fae48ceaf4b82ba5ad7bc77",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_IMU.STL",
+    "bytes": 24284,
+    "sha256": "05036f7d6f9b338be55325e3572720600e2a4e28184f19877f0ffda5db103447",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Knee_to_Waist_Pitch.STL",
+    "bytes": 475584,
+    "sha256": "ca18902a232322f9d963fa4ea02d14d56ab3c6fed29ec871d649668d64f6748e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Elbow_to_Forearm.STL",
+    "bytes": 511484,
+    "sha256": "7240a7aff0b85e0e51d9bf66b8e8e13836eb688e8e5ab10e9f45a6a82f0b9585",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Forearm_to_Wrist_Upper.STL",
+    "bytes": 594334,
+    "sha256": "c460d5a89bc871575bb9b4603cff24b68a8d87e3344630f6cbd213b63a0a2f68",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper.STL",
+    "bytes": 393084,
+    "sha256": "014f18e9a0fa0c2e1089ba9c17d30345d50dc1f108054baf85cdaff93bcc69bd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper_Left_Finger.STL",
+    "bytes": 196084,
+    "sha256": "aa7acd7ba602993674bbbcd3699dc3e9e291363cf6f7b9ac7690d592e3e8c644",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper_Left_Inner_Knuckle.STL",
+    "bytes": 97184,
+    "sha256": "b81196b9763fc4a153aff14c20bab37f31e59aee557f58f06510e1990d915e3f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper_Right_Finger.STL",
+    "bytes": 195984,
+    "sha256": "13e28d9bb3a25e5d1d53d201df588c2c8419c07e6b74ea841fa828c5a1b95029",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper_Right_Inner_Knuckle.STL",
+    "bytes": 94984,
+    "sha256": "64e60a8a38025453b4e9a28aa9966d79f2d1f9adbcb1d71a8598e9791fdee98d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Gripper_Right_Outer_Knuckle.STL",
+    "bytes": 395484,
+    "sha256": "a0dcbae9fcfce99c2e30fa974ac0ba4c9c29ac0ba61eb7160c0ff584c3ea8c2f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Shoulder_Inner_to_Shoulder_Outer.STL",
+    "bytes": 428534,
+    "sha256": "4331eb7c039e2dd9b7ed81e2beedbdebd5bca110330f040b2c641dab2769fdd0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Shoulder_Outer_to_UpperArm.STL",
+    "bytes": 537784,
+    "sha256": "c553ee859be2c47264c81015b4d077851f6b3ff784965a2b3ff2380ca5dd5f52",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_UpperArm_to_Elbow.STL",
+    "bytes": 378384,
+    "sha256": "9e4d5f6aba352a0d2bc6eed2396aa7c6886edae40c0f6eebc96ae1267c2c4aa7",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Wrist_Lower_Single_Gripper.STL",
+    "bytes": 442334,
+    "sha256": "d9cc18ace17758aed771a0a92bdd2dba79bcdc2efa7ec0e0f25416b78e6935e4",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Wrist_Lower_to_Gripper.STL",
+    "bytes": 407934,
+    "sha256": "c4280ad4a7eef277135794ee803edc9f82e19fb78c5201f5a29b70dc7cc57aad",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Left_Wrist_Upper_to_Wrist_Lower.STL",
+    "bytes": 477434,
+    "sha256": "369d0ebb7748aede577fe36ea4822e7055fb98176790dd8fa18093659f1ace3c",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Lidar_Back.STL",
+    "bytes": 429684,
+    "sha256": "14f867027da347efc9c54242ddae2e743d3856905f6298dfefa5f4898fe0d67e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Lidar_Front.STL",
+    "bytes": 430284,
+    "sha256": "a6f4a8d2b158f4cfce625faeece402a5f4d07a6075950b541bdc2e91290fe6f0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Neck_Pitch_to_Neck_Yaw.STL",
+    "bytes": 350084,
+    "sha256": "d64045307b47bdf0512a18d89f30356145ca35a0a02fecbc4a096ea9f1750b98",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Neck_Roll_to_Neck_Pitch.STL",
+    "bytes": 540284,
+    "sha256": "3337c06dbbe6fc775c2e9234faf60112c84fbca02e5bb6d88fa384ebd7554ae0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Neck_Yaw_to_Head.STL",
+    "bytes": 355784,
+    "sha256": "e215dc5af7a2199106ec33bd68976365f705825408c91b50812a2cbfc361566c",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Elbow_to_Forearm.STL",
+    "bytes": 256384,
+    "sha256": "5fb8ce641d360ba7b330530ab903b615c38cdc261d06a227087abccb01a05e21",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Forearm_to_Wrist_Upper.STL",
+    "bytes": 297084,
+    "sha256": "a8069f263424c42fb3e031dab532216cfbe6dd6d1cb5eb2050dc6f4ca2d57188",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper.STL",
+    "bytes": 393084,
+    "sha256": "8f8baad1c8d02a8b9f106c6b9c3db2a2f3076f9b77b6f45c4ce9bd53c62e61e5",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper_Left_Finger.STL",
+    "bytes": 196084,
+    "sha256": "27ccc64cde0c23a249a7c6d053b8bab50ff9f3871d863713edc5226de8059bea",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper_Left_Inner_Knuckle.STL",
+    "bytes": 97184,
+    "sha256": "af62d6f5a702a2a30f086b0f618ebd2d20df3c47ec09d0a4c68203925edfcf4c",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper_Right_Finger.STL",
+    "bytes": 195984,
+    "sha256": "f28cb7d6f18a14c69a2968111ce325e08734d6effd3ccebb378a0306647881a3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper_Right_Inner_Knuckle.STL",
+    "bytes": 94984,
+    "sha256": "38cc69b141f507e5b3c5fd334a89f446739a60373be2feb21af8cf0754a5b628",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Gripper_Right_Outer_Knuckle.STL",
+    "bytes": 395484,
+    "sha256": "d0dc2e63078db74699702a3156b1ce68e0bd42ba73310915bb2737c03bd15a5f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Shoulder_Inner_to_Shoulder_Outer.STL",
+    "bytes": 433284,
+    "sha256": "1611a990d687a03a0fe7965bdf8d446cd002b471237435230f90c55cbda42808",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Shoulder_Outer_to_UpperArm.STL",
+    "bytes": 539934,
+    "sha256": "262bc445a67ab1d5604a7be16707a9fd74cf5562c824570e59e4b5590f17b1ef",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_UpperArm_to_Elbow.STL",
+    "bytes": 380084,
+    "sha256": "6e474b883cdc40d1746b0058464f6bcfa6cba113989ee2da5506b768aef48cae",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Wrist_Lower_Single_Gripper.STL",
+    "bytes": 442334,
+    "sha256": "4b3c77e2818d3c9999d189ac60a26b16ebdeb307551d042951f8f538fb622cd3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Wrist_Lower_to_Gripper.STL",
+    "bytes": 407934,
+    "sha256": "d1172404f2dafab6cb92ab574ae199df4e99d65452496d2f32517a594eca4c73",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Right_Wrist_Upper_to_Wrist_Lower.STL",
+    "bytes": 477134,
+    "sha256": "71d6e35589da570ba1a6883a6113e0830dc127c9d06be95037a95523e8457a00",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Waist_Pitch_to_Waist_Yaw.STL",
+    "bytes": 300784,
+    "sha256": "a910641e7fb4abd50823fb0a5934e06fa0a3725d6e670ad6254b4b3fd1cb370e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/meshes/robot_v2_2/Link_Waist_Yaw_to_Shoulder_Inner.STL",
+    "bytes": 709734,
+    "sha256": "414dc74b9db409b863146e5220614e5dbe9066ae714097325c878db879c45a8d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/__init__.py",
+    "bytes": 60,
+    "sha256": "1550442a7e2ecd434c20764807aa96abd827c66303cf4b7a162121825b4e3bb8",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/adaptive_position.py",
+    "bytes": 15635,
+    "sha256": "95083ecfdb5ad1a2d5e89a93ef9bf98ead9202a02af1e3c1de80ea00c55937ab",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/body_height.py",
+    "bytes": 4160,
+    "sha256": "c1e20c8f8b1124c1b091de7863da5162d48b0cc837ceab15fcb695b273de607b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/camera_stream.py",
+    "bytes": 9023,
+    "sha256": "82b24053fedfaea82ee44062ce1d450c65b19d580c8e1e07bc88441995b477b0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/controller_node.py",
+    "bytes": 255617,
+    "sha256": "3f9eddcd19e9eb1f63104a51e3c72ad7b27ca78d527b8c579d59f8333d324981",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/desktop_mode.py",
+    "bytes": 7719,
+    "sha256": "5e97ffe246b77ca604d9850fd48ae1e7292b175159b8c49bbd6c0bb5c2348913",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/gripper_aperture.py",
+    "bytes": 1149,
+    "sha256": "e2c22c95f7e1b141b6cab812b8c1edbc31f45b37aa0153942216b9d49231af56",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/ik_self_test.py",
+    "bytes": 1704,
+    "sha256": "7a32347f2efda75bbef0b3b0eb6c6118362f9e58b6c1f39fc6271d333a2d6045",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/kinematics.py",
+    "bytes": 15899,
+    "sha256": "a00a0095a5f5147271f59083e7a7a35b4052746cc5ad909b03297e4ec11db365",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/latest_sample.py",
+    "bytes": 2583,
+    "sha256": "4e5dcb48e317224849090d1e7a6e18628cafcc71a8fd0fccb125d930b6afcc0b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/openarmx_udp_input_node.py",
+    "bytes": 9201,
+    "sha256": "ea2e93d5970ec898dcb138d01770bee05c9b398518d12de44bd2d72b76dcf181",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/qos.py",
+    "bytes": 755,
+    "sha256": "c66d25856d08c11cea324fef5249b17193ed84ef9802a5d2d00b8ed46d20ddd9",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/quest_incremental.py",
+    "bytes": 5760,
+    "sha256": "f4739c63bc270fc116a6a7540839d38f8c59d5fb3c822f29bb828a5b5c002f5f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/quest_placo_kinematics.py",
+    "bytes": 12127,
+    "sha256": "ae9c1c6be2dcbc173c41f8253590bcc830bb37a05f3f9ebfdfcf47d03a42e3ff",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/reset_path.py",
+    "bytes": 3784,
+    "sha256": "c9b5d193c3e90d3fa175d993d1dacf820138946d245a0cad620b135395110acd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/reset_stall.py",
+    "bytes": 3652,
+    "sha256": "d89e6b2c740f9e33b61542a18318bb9255f28855092ccbfff40d5f92c14010d8",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/reset_state.py",
+    "bytes": 8285,
+    "sha256": "bc1d609ee645699b2a454c23bd99a4c363e93b71b4fd617e7fda0112ac9f6b32",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/schema.py",
+    "bytes": 4936,
+    "sha256": "77341bece7b7acc5fc823adbdf97e0cada4d3eab3cf3ff308c1c01a73344f7bb",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/teleop_core.py",
+    "bytes": 40700,
+    "sha256": "eef3bfff09a6435ebd7b46f63b610e115557b31cca23d7a1f8f6b1cfd428b7f5",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/trajectory_limiter.py",
+    "bytes": 8631,
+    "sha256": "5c8249b2448714a651775169dba9f82b6763a372161fe7ec670a3da80f502ea1",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/velocity_servo.py",
+    "bytes": 10512,
+    "sha256": "55cdb01b0caefae6e7d41e58b5fdd094de9711c89720c37797e1c0b6102aece6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/vr_mapper_node.py",
+    "bytes": 63582,
+    "sha256": "89180cba514e4db3ede56971155f37eb4cc818e53484f05fcf9013b522ebd2c2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/openarmx_teleop_vr_306_v4/vr_web_bridge.py",
+    "bytes": 59598,
+    "sha256": "6fffdf186ae9c774b2ecb46e9c361a6a6388fa72052cf823eb75ecabad586f53",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/package.xml",
+    "bytes": 926,
+    "sha256": "f8981df62c4ab51995d125e70e9e5bd6710dc36ab183c3a17a3654ea19373d12",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/resource/openarmx_teleop_vr_306_v4",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/scripts/openarmx_306_v4_arm_controller_robot_env.sh",
+    "bytes": 351,
+    "sha256": "d57d5f30aba4a825e927f4eae3eb9fc6ffcb1778dd0b98bbe002abf772e68ab4",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/scripts/setup_v4_placo_env.sh",
+    "bytes": 503,
+    "sha256": "0788b15d372160f05c2db00d1a4f63fe3d729cd92f807bc5f88e6043f240016c",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/setup.cfg",
+    "bytes": 119,
+    "sha256": "f8b0261f5ff6eb1436d46205b20046be546c8eb2013de45fbd480ccbb273d313",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/setup.py",
+    "bytes": 1840,
+    "sha256": "4e0c7d19b638ff14e2db5e12bc04034eaac135514781c909d305e0890b670da8",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/__init__.py",
+    "bytes": 54,
+    "sha256": "5f1435ebd325a2bee15a6c821a281e0b2d00ef1fe197c731b94bad96b1187cd3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/_subject.py",
+    "bytes": 2115,
+    "sha256": "f0f94ff701a800eb72b0257f9a2520bd7ed08f675bc158ba29ef238d3879665d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_absolute_height_convergence.py",
+    "bytes": 3056,
+    "sha256": "b2abbaa2ca9f0bbef633c80d92f3534394f9e378b1f8dabf1ae06810a8a53e15",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_adaptive_position.py",
+    "bytes": 2737,
+    "sha256": "8dcd0cf22406d32861014b82f1c00b1d6a694683d31702742a9e90e0577c83c3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_body_height_control.py",
+    "bytes": 4387,
+    "sha256": "2afac42bc0103154fc6f9ca8dbc9877a116efa5f3c18abdf48105e5ef98d2102",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_camera_stream.py",
+    "bytes": 4605,
+    "sha256": "f9d8b2c8b43adab933f833adab3bf320d0b3e22b7e4d93528232b0935026f8cf",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_clutch_protocol.py",
+    "bytes": 3070,
+    "sha256": "9fd89b47f74eaa6f2c50eee15a1554d8d41ad2c8a405f2b28c742572b47e18bd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_controller_reset_boundaries.py",
+    "bytes": 5261,
+    "sha256": "6581bade6575e3e39ea0b1a944eb0a083a96be68ec55d41c9c197de992ffbeab",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_desktop_mode.py",
+    "bytes": 3169,
+    "sha256": "e999240a03a2289a634093970c7354f34a0b0032d5ec6e6ce2f9822b6816e8a4",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_desktop_mode_controller_static.py",
+    "bytes": 1115,
+    "sha256": "4d788914615c7a769cb6600d5658c9fd31089a7d1fac262313d284fc3fe32df0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_desktop_mode_transport_static.py",
+    "bytes": 1694,
+    "sha256": "03002120396626336e9ccf599b6d000e71c48b1dcbea7462812f1535c334ae1d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_dynamic_command_lead.py",
+    "bytes": 2455,
+    "sha256": "d31c87c1bb0e5466997e09c9eb451088fdfb6c3f1666c29a51d111e68e7f8e50",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_grip_hold_reset.py",
+    "bytes": 4987,
+    "sha256": "52fbf562b39252a103a09ff550367d101afde81ac639e50ec2687385f7b273c7",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_gripper_aperture.py",
+    "bytes": 1665,
+    "sha256": "755f07d7ddc881d3460d0d06e54ea2f74d6d8bcf2e20d2dc50fb0d85c6dc6f47",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_gripper_sync.py",
+    "bytes": 3246,
+    "sha256": "37931878ef6a12dc08338d8addfc688b36d1fa6aa6deea7db46e49bcab1dd9fc",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_head_follow_static.py",
+    "bytes": 3151,
+    "sha256": "cd5bf49b77eb788d16bffe518fd9d6307e26a2c628fc7bc197c9ceadfd49acbc",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_height_watchdog_regression.py",
+    "bytes": 6118,
+    "sha256": "a561e7337e0ac62e0fb58f2a5d611cea61e74a28408173cce51760e09955fde6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_input_smoothing.py",
+    "bytes": 913,
+    "sha256": "b30e3ebf66a0525f660308e25ebaa9adef52bb165dc0ff7f43b36ec7b4ffc9df",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_latest_sample.py",
+    "bytes": 1358,
+    "sha256": "2dc67133758c9e3e654b9bc9b06a31ee85ce81a61a665b6a5e7f8287b457a0d0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_persistent_hmd_session.py",
+    "bytes": 2977,
+    "sha256": "b02937f81b6913b143469f4f779bde93f33fef7fe2ec5260ac9b49ef04b7b99e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_quest_incremental_mapper.py",
+    "bytes": 2651,
+    "sha256": "55ac39d5ad1a733a650428069c161dddd923fa28717c42f2f49a37857d28dc7d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_quest_placo_kinematics.py",
+    "bytes": 3192,
+    "sha256": "3c4d947f579fc022ad695cc0a58501c2aab3652bc82954137c36c175c4c6e6b2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_reset_path.py",
+    "bytes": 1367,
+    "sha256": "a50bda999b9f7823251ef825a0a506c6cee4d00bb4355fcedd3fb5a3f97957e6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_reset_state.py",
+    "bytes": 7752,
+    "sha256": "2dc0707d6b0ef81c391cc513d4ad001c25624c330483d47a35b0b3b129e4bfa4",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_schema.py",
+    "bytes": 5809,
+    "sha256": "13d5f4604aa75d9aaf3480a59c6723dc225644097bff1e71e9c97a399ffe3709",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_scoped_reset.py",
+    "bytes": 6567,
+    "sha256": "118144242cbdc79715cd23cbb5dffa02306f150427632008cf8697481a743cfb",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_squat_takeover.py",
+    "bytes": 9035,
+    "sha256": "18e56b907403b0cb99ddee0b4098214c2e72e122637492da39295861e82a4215",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_teleop_core.py",
+    "bytes": 29231,
+    "sha256": "e5728aee402c1aedec6e5c66be06764484df3f3dcab6e2926ff4a1e9daef9344",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_trajectory_limiter.py",
+    "bytes": 7699,
+    "sha256": "d8d15508fd768bf700569d894b24cba0cee44d4c835646c94f0571f8ed4ee426",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_v4_quest_middle_profile.py",
+    "bytes": 828,
+    "sha256": "2b90b863880fb50153aa6e9ba340693b6b38e87d9d9cc25e40aadf133741c008",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/test_velocity_servo.py",
+    "bytes": 3183,
+    "sha256": "fdd0ff3cab76bdf5a6bb3bbe6fb6461f0efd5811f3bdd95e2b09b14e1f25df03",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/test/unified_camera_integration.py",
+    "bytes": 4380,
+    "sha256": "a372ac9dcd489d8ca1e60a55625cbafabeaaf7d1ccf8de75f50fc8310ccee209",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/urdf/robot_v2_2.srdf",
+    "bytes": 17687,
+    "sha256": "64fcf8bd63c1a5dad27f0600008057145c94613d90f3507b192229bd04819e63",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/urdf/robot_v2_2_simplified.urdf",
+    "bytes": 29072,
+    "sha256": "792931382c9e317b833e661c49ab45dbdd64185671b5bb9f00868ee90ef2fecc",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/index.html",
+    "bytes": 3383,
+    "sha256": "7db52e03cae016a74df55f48923e29e44209b6577af002187a58a435527c07be",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/styles.css",
+    "bytes": 5167,
+    "sha256": "fab6f41432e588b3932922d472193f0e2cd6b98f0cc0fd526f37a5dda97d8ae7",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/vendor/aframe.min.js",
+    "bytes": 1277895,
+    "sha256": "dca046a39e6b5f7e988167fd6101405a38d68804162e4c981f4706127c4b6071",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/vr_app.js",
+    "bytes": 99275,
+    "sha256": "faf76c6fb0a8c413f14a29da87f85141e34a428b570e73e130339419c6cae658",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/vr_app.js.pre-616850d",
+    "bytes": 91547,
+    "sha256": "c665b424589e2e53c6c788e47cbaf6a0ca45418ba0e6f3d070f873b255ef9c1d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/vr_monitor.html",
+    "bytes": 4552,
+    "sha256": "0c8392020d4592f1b3c07c0a6d4fb0a7275fcb610bde530cdaa5081902a4e870",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/vr_monitor.js",
+    "bytes": 3612,
+    "sha256": "79c742d5b5f5720800b8a23cfd9cabf21096c9f9d6be59c7d5580c07f9454f7b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/web/index.html",
+    "bytes": 2363,
+    "sha256": "c7607f7fc0087f13a797fd8c4e6c6187cb7da3c5e2515016568a608216fd6dc2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/web/styles.css",
+    "bytes": 3992,
+    "sha256": "3d4bd32a31b45425841bf3b9a97c3fbc1bbeff541be95dd68cac2bf7412cea42",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/web/vendor/aframe.min.js",
+    "bytes": 1277895,
+    "sha256": "dca046a39e6b5f7e988167fd6101405a38d68804162e4c981f4706127c4b6071",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_306_v4/web/web/vr_app.js",
+    "bytes": 48906,
+    "sha256": "25716be64711ce8a05ff1e44859f8e4d2d170dc55b5e3da42bb95f3362d05a46",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/README.md",
+    "bytes": 1916,
+    "sha256": "5f2304036399e8c3367183ee23f109ad5ade443bf92f3def9c1bb6aa6acc71bd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/SYNC_ENABLE_GRIPPER.md",
+    "bytes": 950,
+    "sha256": "fdd66f6472bbe89b7c1465564403d69bd8de5656186db39a11129823a673045e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/TASKS_283.md",
+    "bytes": 1903,
+    "sha256": "89f7f0bf60323a0e4d35089bcf4f37d5fe78597f73f6362f2516f43485b051bf",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/VR_EXIT_SYNC.md",
+    "bytes": 756,
+    "sha256": "08da7a7aa80f81cd45cacdfc729fc792a59f62fba44885cf346b0cf5cb76225f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/delivery_handoff.json",
+    "bytes": 783,
+    "sha256": "1159ddc8adc46926466d718559d07afb227a9102cbf1b8a4070001a743c5edce",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/hotel_missions.json",
+    "bytes": 1836,
+    "sha256": "3aaf09b3eb733e0b101e355a84f507c52351bb69f7ce9f654ecd9aff6410fdf5",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/public_area_sync.json",
+    "bytes": 651,
+    "sha256": "7ea729229833b9d2e854a4ba514e4460b8711a933e3778272ebdd2499547cbba",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/task_actions.json",
+    "bytes": 4257,
+    "sha256": "356fda0581776d8f3c6a71bda91167aad72683476e1bb3e1758aab90062e0f9b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/task_actions.txt",
+    "bytes": 4086,
+    "sha256": "441a3c114b679450fa579a3aa902aa1ff111c5285c228d9c26fa986b7ad42030",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/config/task_actions1.json",
+    "bytes": 2110,
+    "sha256": "a622ba311192ffc475cf6ad002784b384bdc7538966ef8211c17b7569db8eefe",
+    "mode": "0o600"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/launch/full_vr_navigation.launch.py",
+    "bytes": 11038,
+    "sha256": "fc44ada254331ffe9a18e6de2519c124acc81d682f08fbd4aa301a11f6ca06fd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/__init__.py",
+    "bytes": 78,
+    "sha256": "6e3b29d72974da7844d2c69885d39500dcd91b3f136cea4a433f6fcf6048cde2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/corridor_projection_node.py",
+    "bytes": 26423,
+    "sha256": "93e008673f336ee1e277be2b69283efc3cbbfa6187c5687103de468323e944b1",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/delivery_handoff.py",
+    "bytes": 35827,
+    "sha256": "65c4293bf45a8d9988e998a28210df51df1a66f2715823d29b9d1081bb49d8e0",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/depth_cloud_stream.py",
+    "bytes": 15616,
+    "sha256": "7d64048dd89e99d79d4cdfcce86b2c003998a5110cdd1bf667bbd853c3bae377",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/hotel_bridge.py",
+    "bytes": 20086,
+    "sha256": "a803ca091c67300be626e0529da73a4ccd3673040848514ec8e9653d58b3d3eb",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/hotel_config.py",
+    "bytes": 5454,
+    "sha256": "8f06487225a86761738272b8d4161af00167da710357ea75fb542411d4284ac1",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/hotel_mission.py",
+    "bytes": 49188,
+    "sha256": "3244439b285a3022ad8c81342e90dd268b21e3b5ad1fb7eb6534f109d7973805",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/hotel_service.py",
+    "bytes": 19606,
+    "sha256": "2d91ea9b024509a56d4f955b8ea5fe52842dfb4fc5b5949fc9713a547b4c8804",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/mission_recorder.py",
+    "bytes": 33538,
+    "sha256": "88ebbd9fb10eef85d57d291cda97db695190aa660488070a1e1d67318f507b9b",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/navigation_web_bridge.py",
+    "bytes": 165118,
+    "sha256": "f088cac4f927fe40e88e9349c40008a2e2a1250f2920d2e748231d53385cc6cd",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/proximity_alert.py",
+    "bytes": 4309,
+    "sha256": "60af4ceb2f16327724c2be03705574a5bf4b3664f2a4935b983f18790d6d139e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/proximity_alert_node.py",
+    "bytes": 4743,
+    "sha256": "31444f8f930d3ea76aa806694cceb05b89786ced8d8317e53636a510bc5471b2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/public_area_sync.py",
+    "bytes": 53664,
+    "sha256": "12d77f97ddd06e3d4d1ef572e36fec400c6265853a7949da57e8b8c6ce7d32a3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/public_area_track.py",
+    "bytes": 11018,
+    "sha256": "c331a2539b53963e7e5398deeb47d9c080e356d88e1d09dc36ced8da2541abb6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/recognition_provider.py",
+    "bytes": 3491,
+    "sha256": "6b822de864194cb2dca0699401087ef69681ec744a47c782f1d748bfdd11f39f",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/recognition_worker.py",
+    "bytes": 6614,
+    "sha256": "600cc187cf781fa07cd48c6079752727123f3c452160d858c6e8b6002bde9ad9",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/reset_bridge.py",
+    "bytes": 6648,
+    "sha256": "3cb4b0105c986b3b3f10fe3a59856ab3ed1b4da0961d5952faaee9eb43d3c667",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/session_controls.py",
+    "bytes": 2071,
+    "sha256": "99d29f19441af88b264c1497eef3403b4b7de45bcc15597ca83dcb85350fdc20",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/simple_task_catalog.py",
+    "bytes": 4996,
+    "sha256": "44157bf34691b493f2b1793c0a8ee9f787ced9352358157e91e3ad5372f640b6",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/speech_queue.py",
+    "bytes": 1478,
+    "sha256": "ac13c0781fc1a49e6a4ae2927bec6d7fc7527ce53cd376348e2bc5440775b9fc",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/task_page.py",
+    "bytes": 33172,
+    "sha256": "d83e48fd995a95538b027c79b90389d02c7def72325aa896e7eaf37ece099f20",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/task_planner.py",
+    "bytes": 10276,
+    "sha256": "57233e0569c80cc6d958fe20b982e1318ac6a5b9844912e4643ecc8950d853f2",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/task_speech_node.py",
+    "bytes": 7196,
+    "sha256": "67f211d365d1d2db2bbf4583199ed55f538613a740e21b2bcf55fc89805872b5",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/task_voice_web.py",
+    "bytes": 20426,
+    "sha256": "c3f636f616f66abb45365a5faa906b00b11aabacc867c9b029ee9d8b7555270d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/task_workflow.py",
+    "bytes": 15155,
+    "sha256": "daa0ecedb1708e204efbaa06b5bb4fac9f774ee07372859bb21572579b6fb9bf",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/travel_head.py",
+    "bytes": 5449,
+    "sha256": "629fede71a8d4902dc8d53bd4eced4a1223859655ffe22cb62861b0f56c18f22",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/openarmx_teleop_vr_navigation_306/voice_mode_router.py",
+    "bytes": 3888,
+    "sha256": "4d918cadaad0d201872d4e015a08e2ab3ba8bdda4d341fcfed12edff44c80702",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/package.xml",
+    "bytes": 1349,
+    "sha256": "ac1b3553018d4f50ebff6460bfbc129d90fd4a585b72cd98ce417cfe913431a0",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/resource/openarmx_teleop_vr_navigation_306",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/scripts/link_task_catalog.sh",
+    "bytes": 1301,
+    "sha256": "9ba1c66911f6390696d6d0b7ea564c4422a47e12120d29d715de3309be041ec5",
+    "mode": "0o755"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/scripts/start_vr_navigation_306.sh",
+    "bytes": 8081,
+    "sha256": "b36c3e7ebfb47ba47a4be044c0d8f29b6a4b9178905170e2542c0adab6254ff2",
+    "mode": "0o755"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/scripts/vr_navigation_desktop_app.py",
+    "bytes": 24523,
+    "sha256": "7e6be073bb77eb4158517c01f53759d5ce40698649dada742e6b555b2d1db233",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/setup.cfg",
+    "bytes": 135,
+    "sha256": "6db47a838b858a930f82dbb50188998ca7618e739a36f5d5eb30ad218143d6f5",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/setup.py",
+    "bytes": 1551,
+    "sha256": "dece821cf0a355d7eb96b5bfd2c7538436c5a336ed1212dd0e2f32b75881451d",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/probe_real_handoff.py",
+    "bytes": 1152,
+    "sha256": "674258cf55bd72ce86cc6d2ea1c893b370748039961c18869b56d834f46058d1",
+    "mode": "0o755"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/smoke_bridge_delivery.py",
+    "bytes": 16573,
+    "sha256": "6adc854981a70eb1644b3b9109987a5e161ebdd3dac55ec2c9ec473eb73624f9",
+    "mode": "0o755"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_arrival.py",
+    "bytes": 2238,
+    "sha256": "3b3f1a9db64130aac42ab30a151a24fa193031c8546283cad3cd05fe7f310dbe",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_arrival_keys.cjs",
+    "bytes": 3239,
+    "sha256": "a909cf8856b2f5f3ceaa123a3a8e4401a056834ed710bee552c227bfe4d28ab3",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_close.py",
+    "bytes": 6676,
+    "sha256": "facb1b997d871468f8dc50e8d0f888eeab8958902026b291523a3637f6cd4ccd",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_close_keys.cjs",
+    "bytes": 1937,
+    "sha256": "41a5c3c5a9ca5369355a626e951b2f68b0216fb343ef4bff70446e343ba21721",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_handoff.py",
+    "bytes": 20831,
+    "sha256": "6b543ccf052e9481a4e93d4113c00ea9e5ad90d02e5d59cc4b01297f2e46959a",
+    "mode": "0o755"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_offer.py",
+    "bytes": 7149,
+    "sha256": "e94aa5201dd4779eab215aa1a985b7df45aeb098e075f96969cbaa2bfecc0e9f",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_offer_keys.cjs",
+    "bytes": 2416,
+    "sha256": "2df411e6197c24a8160053c151da2be6edcd76fe6d352dca69b477f3ab116d67",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_delivery_return_load_keys.cjs",
+    "bytes": 1628,
+    "sha256": "a306031b8342ee4223f8eae419ef96bd2399fb55fe2fa8a45927bb678c6ed081",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_hotel_bridge.py",
+    "bytes": 11512,
+    "sha256": "c7f7986622ddd90a220206b601f6edd97d89bfeca602d3a15b2a4ac74b1ceba8",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_hotel_catalog_pickup.py",
+    "bytes": 10047,
+    "sha256": "a84230a504a8899d4c550fb6eb472fce95fdf09ee2628f423678ae0fd781d5dd",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_hotel_keys.cjs",
+    "bytes": 4645,
+    "sha256": "957fb1feeb17b1b1f861c9fe034ce66729da7381ef5d69c7dd7d8ea7882dbc7b",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_hotel_mission.py",
+    "bytes": 9502,
+    "sha256": "711ea242799916eec75defa25fa0ed09dd0cf6d98c2799170962484dc677d7ab",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_hotel_service.py",
+    "bytes": 7311,
+    "sha256": "8e5448da9ff787a029a4b47cbf1628d9f3717a6bd52c75d58236fc893a543950",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_mission_recorder.py",
+    "bytes": 1804,
+    "sha256": "6dcae81b045a8bae2f459ad3cd18b752ffb8c06a31e65be413b583619de81c4d",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_navigation_logic.py",
+    "bytes": 34281,
+    "sha256": "87c9a1e845cf5c3ac992a17c4983d6bb553842d8cb0d4b4733f27d196350d1bf",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_operator_intervention.py",
+    "bytes": 8297,
+    "sha256": "08f81ac92db5e7b500480d561f441e84118d1f2b60cf4abe525b1d7779245d6f",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_operator_keys.cjs",
+    "bytes": 2429,
+    "sha256": "bc1dd6b61362faae040b6e8e375a3371e89d2242f4369467b5d2f0a7088a496c",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_recognition_provider.py",
+    "bytes": 1837,
+    "sha256": "732747eac173bb2a8e88fdd85e74608f181cc09140785c7ba3ddadf2e24ddbd9",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_recognition_worker.py",
+    "bytes": 1171,
+    "sha256": "7a2467ff8436b75922b8978dd2907553002bb811b75332a24f8f762a9551388f",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_reset_bridge.py",
+    "bytes": 2637,
+    "sha256": "747a36c1ac8587462f18d2c3f8ef0bd899705dbf2d623e2b9d3a2e78ae89931b",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_reset_controls.cjs",
+    "bytes": 9385,
+    "sha256": "831272f2d612ad434954190ec65759c1634477263c1aecf921b455db5a766175",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_reset_integration.cjs",
+    "bytes": 2577,
+    "sha256": "5d1efdb48838e6018d5097afcbc87309a1295500146212f5bf90318350b66224",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_simple_task_catalog.py",
+    "bytes": 6150,
+    "sha256": "5c48a4be446806ee5f49278adb4b7c9b4f201fb35fff540ba59d1ddae0bc213b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_task_head_pose.py",
+    "bytes": 7834,
+    "sha256": "cbc45061eec7d9eadc37a2b01a7489bcf702993fded0fd86c92775f7a1fa77f7",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_task_height_feedback.py",
+    "bytes": 6960,
+    "sha256": "21ac84887d5f4a22a76990462c1d8d7d135f010b503cb574b7df9b41b8252942",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_task_live_refresh_session.py",
+    "bytes": 9215,
+    "sha256": "4d97a497c96e5409f132e24c85be5a7198576269030d55be7d255f9ea56acb96",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_task_workflow.py",
+    "bytes": 6061,
+    "sha256": "edf06bf58dcaeb5f560368d44866e3c43d9e0aff83249c7e06abb27e3ec7fd24",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/test/test_yb_chord.cjs",
+    "bytes": 1508,
+    "sha256": "5b335fab275378bf9c8f46780b634c518e10cdc192b07db1081392cc5a2bf711",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/audience.css",
+    "bytes": 13270,
+    "sha256": "801c3b8b4b4c078d1a9054c46c0f75b632908d6abd7000ac7b63f58b201ded9e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/audience.html",
+    "bytes": 4104,
+    "sha256": "04dda94a81f1150cb38b5fced49fa16ff26ad2f29a95acbd9c9b3c1a9bb09372",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/audience.js",
+    "bytes": 12695,
+    "sha256": "f8972aa5d3209e9c87ca62ea98764893e89857dc3f876ef7bc79a795b490b398",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/drive_worker.js",
+    "bytes": 3097,
+    "sha256": "bf3d92f71638cf1f01c22a8fe62c60fda21f6590fa68815417f9e824b110a211",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/hotel_controls.js",
+    "bytes": 12732,
+    "sha256": "b4c2755d7b674ec210e1949c41df7fa4b907307cbf02c4046839abb0ea3997b2",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/index.html",
+    "bytes": 4937,
+    "sha256": "4ae090b71c6666453a156908a701fb2e8a50c03b77bf36fa00914b939e829a16",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/monitor.css",
+    "bytes": 618,
+    "sha256": "f83a15779d66741a86c1e1fca9824ed293de1cd4052737358f0da5f77e258190",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/monitor.html",
+    "bytes": 435,
+    "sha256": "ef6ab5ec02e55945dbd247bd3b892b8658798c62201c99ebfc0cf75d0484227e",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/monitor.js",
+    "bytes": 21986,
+    "sha256": "9676eb8678bec381aa96832c84d9e9ec6a76e979522a44ba21c3c8a40626654b",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/nav_app.js",
+    "bytes": 148782,
+    "sha256": "97d25564705284bb35e66987c7e26ffd688db1b844ebf0a9746e5b5a0625d620",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/nav_styles.css",
+    "bytes": 275,
+    "sha256": "37dd0bc2f0327deb86784329b4b87e29da666a11c3ea62f31e149fab341973df",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/reset_controls.js",
+    "bytes": 22783,
+    "sha256": "90f3c3ce70877b366a36c9a5326d778a75f51d91dd227e414aba295d8f101a64",
+    "mode": "0o644"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/vr_app.js",
+    "bytes": 98280,
+    "sha256": "8528498076b9aba6d9b7ff2fb52cdddd4a520a29f4a122f84a06603478fbac22",
+    "mode": "0o664"
+  },
+  {
+    "path": "openarmx_teleop_vr_navigation_306/web/vr_custom_controls.js",
+    "bytes": 11416,
+    "sha256": "7d878902581b779f20a5724b791eae8047078032d4263a61b18bc167c964e970",
+    "mode": "0o664"
+  }
+]

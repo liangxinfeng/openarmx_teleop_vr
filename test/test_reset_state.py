@@ -4,14 +4,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'openarmx_teleop_vr_306_v5'
+SOURCE = ROOT / 'openarmx_teleop_vr_306_v4'
 RESET_STATE = SOURCE / 'reset_state.py'
 MAPPER = SOURCE / 'vr_mapper_node.py'
 
 
 def _load_reset_state():
     spec = importlib.util.spec_from_file_location(
-        'openarmx_306_v5_reset_state_subject', RESET_STATE
+        'openarmx_306_v4_reset_state_subject', RESET_STATE
     )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

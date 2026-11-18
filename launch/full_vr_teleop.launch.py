@@ -1,7 +1,6 @@
-"""Launch the Quest-middle V5 WebXR teleoperation stack for robot 306."""
+"""Launch the Quest-middle V4 WebXR teleoperation stack for robot 306."""
 
 import os
-import yaml
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -20,13 +19,11 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
-    share = get_package_share_directory('openarmx_teleop_vr_306_v5')
+    share = get_package_share_directory('openarmx_teleop_vr_306_v4')
     controller_config = os.path.join(share, 'config', 'controller.yaml')
     teleop_config = os.path.join(share, 'config', 'teleop.yaml')
-    with open(teleop_config, encoding='utf-8') as stream:
-        teleop_parameters = yaml.safe_load(stream)['independent_vr_mapper_306_v5']['ros__parameters']
-    urdf = os.path.join(share, 'urdf', 'robot_v3_1_simplified.urdf')
-    srdf = os.path.join(share, 'urdf', 'robot_v3_1.srdf')
+    urdf = os.path.join(share, 'urdf', 'robot_v2_2_simplified.urdf')
+    srdf = os.path.join(share, 'urdf', 'robot_v2_2.srdf')
 
     suffix = LaunchConfiguration('topic_suffix')
     dry_run = LaunchConfiguration('dry_run')
@@ -90,9 +87,6 @@ def generate_launch_description():
     head_neutral_joints_deg = LaunchConfiguration(
         'head_neutral_joints_deg'
     )
-    head_axis_gain = LaunchConfiguration('head_axis_gain')
-    head_joint_minimum_deg = LaunchConfiguration('head_joint_minimum_deg')
-    head_joint_maximum_deg = LaunchConfiguration('head_joint_maximum_deg')
     lock_head_follow_on_enable_reset = LaunchConfiguration(
         'lock_head_follow_on_enable_reset'
     )
@@ -102,9 +96,9 @@ def generate_launch_description():
     cyclonedds_uri = LaunchConfiguration('cyclonedds_uri')
 
     controller = Node(
-        package='openarmx_teleop_vr_306_v5',
-        executable='openarmx_306_v5_arm_controller_robot_env.sh',
-        name='independent_arm_controller_306_v5',
+        package='openarmx_teleop_vr_306_v4',
+        executable='openarmx_306_v4_arm_controller_robot_env.sh',
+        name='independent_arm_controller_306_v4',
         output='screen',
         parameters=[controller_config, {
             'topic_suffix': ParameterValue(suffix, value_type=str),
@@ -156,11 +150,12 @@ def generate_launch_description():
     )
 
     mapper = Node(
-        package='openarmx_teleop_vr_306_v5',
-        executable='openarmx_306_v5_mapper',
-        name='independent_vr_mapper_306_v5',
+        package='openarmx_teleop_vr_306_v4',
+        executable='openarmx_306_v4_mapper',
+        name='independent_vr_mapper_306_v4',
         output='screen',
         parameters=[teleop_config, {
+            'yb_reset_menu_enabled': ParameterValue(LaunchConfiguration('yb_reset_menu_enabled'), value_type=bool),
             'topic_suffix': ParameterValue(suffix, value_type=str),
             'dry_run': ParameterValue(dry_run, value_type=bool),
             'forward_position_scale': ParameterValue(
@@ -187,9 +182,6 @@ def generate_launch_description():
             'head_neutral_joints_deg': ParameterValue(
                 head_neutral_joints_deg
             ),
-            'head_axis_gain': ParameterValue(head_axis_gain),
-            'head_joint_minimum_deg': ParameterValue(head_joint_minimum_deg),
-            'head_joint_maximum_deg': ParameterValue(head_joint_maximum_deg),
         }],
     )
 
@@ -197,7 +189,7 @@ def generate_launch_description():
         condition=IfCondition(start_web),
         cmd=[
             robot_env_python,
-            '-m', 'openarmx_teleop_vr_306_v5.vr_web_bridge',
+            '-m', 'openarmx_teleop_vr_306_v4.vr_web_bridge',
             '--ros-args',
             '-p', ['host:=', web_host],
             '-p', ['https_port:=', web_port],
@@ -207,18 +199,19 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        DeclareLaunchArgument('topic_suffix', default_value='0_345'),
+        DeclareLaunchArgument('topic_suffix', default_value='0_283'),
         DeclareLaunchArgument(
             'dry_run', default_value='true',
             description='Keep true for WebXR/IK preview without hardware output.'),
         DeclareLaunchArgument('start_web', default_value='true'),
+        DeclareLaunchArgument('yb_reset_menu_enabled', default_value='false'),
         DeclareLaunchArgument('web_host', default_value='0.0.0.0'),
-        DeclareLaunchArgument('web_port', default_value='8447'),
+        DeclareLaunchArgument('web_port', default_value='8446'),
         DeclareLaunchArgument(
             'rgbd_camera_enabled', default_value='true',
             description='Expose the read-only RGB-D colour stream to WebXR.'),
         DeclareLaunchArgument(
-            'forward_position_scale', default_value='1.0',
+            'forward_position_scale', default_value='0.90',
             description=(
                 'Operator-forward hand displacement scale. Other axes retain '
                 'the position_scale value from teleop.yaml.'
@@ -231,7 +224,7 @@ def generate_launch_description():
                 'diagnostic override.'
             )),
         DeclareLaunchArgument(
-            'waist_forward_assist_max_lean_deg', default_value='12.0',
+            'waist_forward_assist_max_lean_deg', default_value='10.0',
             description='Maximum forward waist pitch assist in degrees.'),
         DeclareLaunchArgument(
             'waist_forward_assist_command_lead_deg', default_value='8.0',
@@ -260,11 +253,11 @@ def generate_launch_description():
             'body_height_lowering_rate_m_sec', default_value='0.10',
             description='Coordinated body-height travel rate in metres/second.'),
         DeclareLaunchArgument(
-            'quick_reset_max_velocity_deg_sec', default_value='46.8'),
+            'quick_reset_max_velocity_deg_sec', default_value='23.4'),
         DeclareLaunchArgument(
-            'quick_reset_max_acceleration_deg_sec2', default_value='130.0'),
+            'quick_reset_max_acceleration_deg_sec2', default_value='65.0'),
         DeclareLaunchArgument(
-            'quick_reset_max_jerk_deg_sec3', default_value='650.0'),
+            'quick_reset_max_jerk_deg_sec3', default_value='325.0'),
         DeclareLaunchArgument(
             'quick_reset_neck_max_velocity_deg_sec', default_value='30.0'),
         DeclareLaunchArgument(
@@ -273,14 +266,11 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'quick_reset_neck_max_jerk_deg_sec3', default_value='416.667'),
         DeclareLaunchArgument(
-            'quick_reset_neck_joints', default_value='[0.0,0.0,0.0]',
+            'quick_reset_neck_joints', default_value='[0.010928,-29.998649,0.010928]',
             description='Quick-reset neck target [roll, pitch, yaw] in degrees.'),
         DeclareLaunchArgument(
             'head_neutral_joints_deg', default_value='[0.0, 0.0, 0.0]',
             description='Head-follow neutral [roll, pitch, yaw] in degrees.'),
-        DeclareLaunchArgument('head_axis_gain', default_value=str(teleop_parameters['head_axis_gain'])),
-        DeclareLaunchArgument('head_joint_minimum_deg', default_value=str(teleop_parameters['head_joint_minimum_deg'])),
-        DeclareLaunchArgument('head_joint_maximum_deg', default_value=str(teleop_parameters['head_joint_maximum_deg'])),
         DeclareLaunchArgument(
             'lock_head_follow_on_enable_reset', default_value='false',
             description='Lock head follow after hardware enable and quick reset.'),

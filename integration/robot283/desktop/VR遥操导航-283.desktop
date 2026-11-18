@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=VR遥操导航（283）
+Comment=全屏启动云蝶 Logo 与 VR 遥操导航
+Exec=/home/ubuntu/.local/bin/autolife-vr-navigation-283
+Path=/home/ubuntu
+Icon=/home/ubuntu/ros2_ws/src/autolife_robot_control_center/logo/yundie.webp
+Terminal=false
+StartupNotify=true
+Categories=Utility;Robotics;

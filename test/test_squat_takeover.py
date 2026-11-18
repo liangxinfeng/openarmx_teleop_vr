@@ -1,12 +1,11 @@
-from openarmx_teleop_vr_306_v5.grip_session_ik import GripSessionIK
 """Real controller methods with fake feedback; never creates a ROS node."""
 from types import SimpleNamespace as NS
 from unittest.mock import Mock
 import numpy as np
 import pytest
-from openarmx_teleop_vr_306_v5.controller_node import IndependentArmController as Controller
-from openarmx_teleop_vr_306_v5.teleop_core import forward_reach_to_waist_pitch
-from openarmx_teleop_vr_306_v5.reset_path import (
+from openarmx_teleop_vr_306_v4.controller_node import IndependentArmController as Controller
+from openarmx_teleop_vr_306_v4.teleop_core import forward_reach_to_waist_pitch
+from openarmx_teleop_vr_306_v4.reset_path import (
     continuous_direct_reset, conservative_reset_duration, feedback_bounded_reset_progress)
 
 
@@ -28,9 +27,8 @@ def test_no_hand_motion_preserves_signed_crouch(height):
 def test_session_rebases_neutral_not_zero(height):
     g=groups(height)
     c=NS(_build_motion_controller_state=Mock(return_value={}),
-         _grip_ik=GripSessionIK(),_latest_target_mailbox=NS(reset=Mock()),_commit_motion_controller_state=Mock(),
+         _latest_target_mailbox=NS(reset=Mock()),_commit_motion_controller_state=Mock(),
          _velocity_active_sides=set(),_waist_follow_enabled=True,
-         _waist_follow_neutral_pitch_deg=None,
          _waist_follow_profile='forward_pitch_only')
     Controller._begin_fresh_teleop_session_locked(c,g)
     assert c._waist_follow_neutral_pitch_deg==g['leg_waist'][2]
@@ -44,7 +42,7 @@ def test_both_reset_chords_preserve_measured_crouch(height,hold):
     g=groups(height);g['leg_waist'][3]=12.
     params=dict(quick_reset_left_arm_joints=[40,0,10,130,0,0,0],
         quick_reset_right_arm_joints=[-40,0,-10,-130,0,0,0],
-        quick_reset_neck_joints=[0,-30,0],quick_reset_open_grippers=True,quick_reset_waist_joints=[0.,0.],
+        quick_reset_neck_joints=[0,-30,0],quick_reset_open_grippers=True,
         quick_reset_gripper_open_position=10,gripper_min_position=10,gripper_max_position=360)
     def path(start,goal):
         return '',dict(start=Controller._group_vector(start),goal=Controller._group_vector(goal),duration_sec=12.)
@@ -53,23 +51,22 @@ def test_both_reset_chords_preserve_measured_crouch(height,hold):
         _kinematics=NS(groups_from_q_deg=lambda q,g:g),
         _reset_required_vector=Controller._reset_required_vector,
         _build_motion_controller_state=Mock(return_value={}),
-        _prepare_quick_reset_path=path,_grip_ik=GripSessionIK(),_latest_target_mailbox=NS(reset=Mock()),
+        _prepare_quick_reset_path=path,_latest_target_mailbox=NS(reset=Mock()),
         _commit_motion_controller_state=Mock(),_lock_head_follow_for_control_boundary_locked=Mock(),
         _deactivate_body_height_locked=Mock(),_velocity_active_sides=set(),
         _waist_follow_enabled=True,_waist_follow_profile='forward_pitch_only',
         _gripper_targets={'left':240.,'right':180.})
-    assert Controller._start_quick_reset_locked(c,10.,NS(as_dict=lambda:g),preserve_grippers=hold,source='hold_gripper_reset' if hold else 'quick_reset')==''
-    expected=g['leg_waist'].copy();expected[3]=12. if hold else 0.
-    np.testing.assert_allclose(c._target_groups['leg_waist'],expected)
+    assert Controller._start_quick_reset_locked(c,10.,NS(as_dict=lambda:g),preserve_grippers=hold)==''
+    np.testing.assert_allclose(c._target_groups['leg_waist'],g['leg_waist'])
     assert c._body_height_reverse_mode == (height < 0)
-    assert c._target_groups['leg_waist'][3]==(12. if hold else 0.)
+    assert c._target_groups['leg_waist'][3]==12.
     assert c._waist_follow_pitch_target_deg==c._waist_follow_neutral_pitch_deg
     assert c._gripper_targets==({'left':240.,'right':180.} if hold else {'left':10.,'right':10.})
     start = c._reset_path_start
     goal = c._reset_path_goal
     for phase in np.linspace(0., 1., 21):
-        np.testing.assert_allclose(continuous_direct_reset(start, goal, phase)[:3],
-                                   g['leg_waist'][:3])
+        np.testing.assert_allclose(continuous_direct_reset(start, goal, phase)[:4],
+                                   g['leg_waist'])
 
 
 @pytest.mark.parametrize('height',[-.53,-.3,.3,.5])
@@ -111,7 +108,7 @@ def test_invalid_feedback_fails_closed():
 
 @pytest.mark.parametrize('height',[-.30,.30])
 def test_manual_branch_ignores_waist_angle_and_stays_latched_at_standing(height):
-    from openarmx_teleop_vr_306_v5.body_height import measured_reverse_squat
+    from openarmx_teleop_vr_306_v4.body_height import measured_reverse_squat
     legs=groups(height)['leg_waist']
     for waist in [-77.,0.,77.]:
         legs[2]=waist
@@ -140,7 +137,7 @@ def height_command(c,now,**payload):
 
 @pytest.mark.parametrize('start,goal',[(-.3,.2),(.3,-.2),(-.53,.53),(.53,-.53)])
 def test_task_direction_changes_without_previous_mode_leak(start,goal):
-    from openarmx_teleop_vr_306_v5.body_height import estimate_body_lowering
+    from openarmx_teleop_vr_306_v4.body_height import estimate_body_lowering
     c=height_subject(start)
     for i in range(1500):
         now=10+i*.05
@@ -171,7 +168,7 @@ def test_manual_raise_from_reverse_does_not_flip_at_minus_two_mm():
 
 
 def test_absolute_to_manual_discards_advanced_reference():
-    from openarmx_teleop_vr_306_v5.body_height import estimate_body_lowering
+    from openarmx_teleop_vr_306_v4.body_height import estimate_body_lowering
     c=height_subject(-.20)
     c._body_height_input_absolute=True;c._body_height_lowering_m=.15
     c._body_height_command_progress=.15/.56

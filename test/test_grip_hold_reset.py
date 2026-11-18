@@ -1,12 +1,11 @@
-from openarmx_teleop_vr_306_v5.grip_session_ik import GripSessionIK
 import json
 import threading
 from types import SimpleNamespace as NS
 import numpy as np
 import pytest
-from openarmx_teleop_vr_306_v5.reset_state import ClutchedTrigger, QuickResetState
-from openarmx_teleop_vr_306_v5.vr_mapper_node import IndependentVrMapper
-from openarmx_teleop_vr_306_v5.controller_node import IndependentArmController
+from openarmx_teleop_vr_306_v4.reset_state import ClutchedTrigger, QuickResetState
+from openarmx_teleop_vr_306_v4.vr_mapper_node import IndependentVrMapper
+from openarmx_teleop_vr_306_v4.controller_node import IndependentArmController
 
 
 def test_clutch_release_and_retake_do_not_open_held_object():
@@ -52,7 +51,6 @@ def test_reset_preserves_closed_targets_only_for_new_mode(preserve):
     params={'quick_reset_left_arm_joints':[40,0,0,130,0,0,0],
             'quick_reset_right_arm_joints':[-40,0,0,-130,0,0,0],
             'quick_reset_neck_joints':[0,-30,0], 'quick_reset_open_grippers':True,
-            'quick_reset_waist_joints':[0.,0.],
             'quick_reset_gripper_open_position':10,'gripper_min_position':10,'gripper_max_position':360}
     groups={'left_arm':np.zeros(7),'right_arm':np.zeros(7),'neck':np.zeros(3),
             'leg_waist':np.zeros(4),'left_gripper':np.array([80.]),'right_gripper':np.array([90.])}
@@ -62,7 +60,7 @@ def test_reset_preserves_closed_targets_only_for_new_mode(preserve):
         _reset_required_vector=lambda g:np.r_[g['left_arm'],g['right_arm'],g['neck']],
         _build_motion_controller_state=lambda g:{},
         _prepare_quick_reset_path=lambda *a:('',{'start':np.zeros(17),'goal':np.ones(17),'duration_sec':2}),
-        _grip_ik=GripSessionIK(),_latest_target_mailbox=NS(reset=lambda:None),_commit_motion_controller_state=lambda s:None,
+        _latest_target_mailbox=NS(reset=lambda:None),_commit_motion_controller_state=lambda s:None,
         _lock_head_follow_for_control_boundary_locked=lambda:None,
         _deactivate_body_height_locked=lambda:None,_velocity_active_sides=set(),_waist_follow_enabled=False,
         _gripper_targets={'left':270.,'right':250.})
@@ -75,7 +73,7 @@ def test_reset_preserves_closed_targets_only_for_new_mode(preserve):
 @pytest.mark.parametrize('target,direction',[(.20,1),(0.,-1),(.56,1)])
 def test_continuous_height_targets_use_existing_guarded_controller(target,direction,monkeypatch):
     from test_height_watchdog_regression import Harness
-    from openarmx_teleop_vr_306_v5 import controller_node
+    from openarmx_teleop_vr_306_v4 import controller_node
     subject=Harness()
     subject.params['body_height_lowering_rate_m_sec']=.18
     subject.params['body_height_motion_command_lead_deg']=5.

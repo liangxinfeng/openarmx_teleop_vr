@@ -85,7 +85,7 @@ def test_normal_teleop_launch_uses_forward_only_waist_profile_by_default():
     ).read_text(encoding='utf-8')
     assert "'waist_follow_profile', default_value='forward_pitch_only'" in launch
     assert "'waist_follow_profile': ParameterValue(" in launch
-    assert "'forward_position_scale', default_value='1.0'" in launch
+    assert "'forward_position_scale', default_value='0.90'" in launch
     assert "'forward_position_scale': ParameterValue(" in launch
     assert 'forward_position_scale, value_type=float' in launch
 

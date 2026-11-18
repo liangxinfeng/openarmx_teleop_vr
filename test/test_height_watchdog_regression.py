@@ -9,13 +9,13 @@ import threading
 import time
 
 import numpy as np
-from openarmx_teleop_vr_306_v5.body_height import (
+from openarmx_teleop_vr_306_v4.body_height import (
     MAX_BODY_LOWERING_M, MAX_REVERSE_BODY_LOWERING_M, BODY_HEIGHT_JOINT_NAMES, BODY_HEIGHT_MAXIMUM_DEG,
     estimate_body_lowering, coordinated_body_height_targets, measured_reverse_squat,
 )
 
 SOURCE = Path(os.environ.get('HEIGHT_CONTROLLER_SOURCE',
-    str(Path(__file__).parents[1] / 'openarmx_teleop_vr_306_v5/controller_node.py')))
+    str(Path(__file__).parents[1] / 'openarmx_teleop_vr_306_v4/controller_node.py')))
 tree = ast.parse(SOURCE.read_text())
 controller = next(n for n in tree.body if isinstance(n, ast.ClassDef)
                   and n.name == 'IndependentArmController')
@@ -25,9 +25,6 @@ namespace = dict(globals())
 exec(compile(ast.Module(body=[n for n in controller.body
     if isinstance(n, ast.FunctionDef) and n.name in names], type_ignores=[]),
     str(SOURCE), 'exec'), namespace)
-
-from openarmx_teleop_vr_306_v5.waist_follow_state import held_waist_assist
-namespace['held_waist_assist'] = held_waist_assist
 
 class Harness:
     def __init__(self):

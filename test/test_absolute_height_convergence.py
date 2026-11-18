@@ -5,7 +5,7 @@ from unittest.mock import patch
 import numpy as np
 import pytest
 from test_height_watchdog_regression import Harness
-from openarmx_teleop_vr_306_v5.body_height import body_height_joint_targets,estimate_body_lowering
+from openarmx_teleop_vr_306_v4.body_height import body_height_joint_targets,estimate_body_lowering
 
 
 def height_subject(actual,reference):

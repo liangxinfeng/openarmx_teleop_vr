@@ -1,6 +1,6 @@
-independent_vr_mapper_306_v5:
+independent_vr_mapper_306_v4:
   ros__parameters:
-    topic_suffix: "0_345"
+    topic_suffix: "0_283"
     dry_run: true
     # Low-latency profile: consume the latest WebXR sample at up to 90 Hz.
     command_rate: 90.0
@@ -18,9 +18,10 @@ independent_vr_mapper_306_v5:
     # clutch anchors and keeps the already-enabled controller in position hold;
     # explicit UI disable or terminal shutdown still ends the session.
     disable_on_vr_timeout: false
-    position_scale: 1.0
-    # Fallback relative mapping is isotropic; calibrated mapping uses shoulder/reach.
-    forward_position_scale: 1.0
+    position_scale: 0.70
+    # Match human forward extension to robot arm extension without changing
+    # the proven lateral/vertical sensitivity.
+    forward_position_scale: 0.90
     # The mapper now advances at the fixed 90 Hz control tick rather than only
     # on bursty WebXR arrivals. This ~20 ms smoothing constant removes target
     # steps while keeping hand response perceptually immediate.
@@ -41,8 +42,9 @@ independent_vr_mapper_306_v5:
     # Cartesian workspace.  The mapper now projects continuously at this wider
     # boundary instead of dropping the command.
     max_anchor_displacement: 0.70
-    # Fixed clutch-forward clipping removed; URDF reach and workspace remain.
-    max_forward_displacement: 0.0
+    # At 26 cm the robot reaches its physical forward shell with about 11 deg
+    # elbow bend. Larger human motion remains continuously held at that shell.
+    max_forward_displacement: 0.26
     workspace_minimum: [-0.10, -0.75, 0.25]
     workspace_maximum: [0.90, 0.75, 1.60]
     # Allow each hand to cross the body centre by 22 cm.  The torso box and
@@ -53,7 +55,7 @@ independent_vr_mapper_306_v5:
     forbidden_box_maximum: [0.30, 0.16, 1.25]
     enable_gripper: true
     gripper_open_position: 10.0
-    gripper_closed_position: 330.0
+    gripper_closed_position: 360.0
     gripper_trigger_deadzone: 0.05
     # Keep independent linear control for one hand. If both triggers start
     # within 200 ms, share the stronger trigger until either is released so a
@@ -67,8 +69,8 @@ independent_vr_mapper_306_v5:
     gripper_dual_sync_max_difference: 0.40
     # One responsive smoothing layer lives in the mapper; the controller's
     # legacy second step limiter is disabled in controller.yaml.
-    gripper_filter_alpha: 0.78
-    gripper_max_step_per_cycle: 32.0
+    gripper_filter_alpha: 1.0
+    gripper_max_step_per_cycle: 350.0
     gripper_command_epsilon: 0.75
     gripper_resend_interval: 0.15
     quick_reset_enabled: true

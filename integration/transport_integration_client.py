@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dry-run integration test for the 306 V5 WebRTC/WebSocket transport bridge.
+"""Dry-run integration test for the 306 V4 WebRTC/WebSocket transport bridge.
 
 The client intentionally sends no controller poses and no pressed buttons, so
 the mapper cannot produce arm targets.  Run it only against a bridge launched
@@ -227,7 +227,7 @@ async def run_test(args: argparse.Namespace) -> None:
 
     async with ClientSession(connector=connector) as session:
         initial_status = await get_status(session, status_url)
-        if initial_status.get("system") != "openarmx_teleop_vr_306_v5":
+        if initial_status.get("system") != "openarmx_teleop_vr_306_v4":
             raise AssertionError(
                 f"unexpected bridge identity: {initial_status.get('system')!r}"
             )

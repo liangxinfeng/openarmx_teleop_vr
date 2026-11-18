@@ -590,7 +590,7 @@ function createBrandHud() {
   group.setAttribute('position', '0.72 0.88 0');
 
   const mark = document.createElement('a-text');
-  mark.setAttribute('value', 'AUTOLIFE 306 V5');
+  mark.setAttribute('value', 'AUTOLIFE 306 V4');
   mark.setAttribute('align', 'center');
   mark.setAttribute('anchor', 'center');
   mark.setAttribute('baseline', 'center');
@@ -1297,7 +1297,7 @@ AFRAME.registerComponent('telegrip-vr-bridge', {
       const rightReady = Boolean(rightController?.position);
       state.headText.setAttribute(
         'value',
-        `AUTOLIFE 306 V5 / PAGE V3\n` +
+        `AUTOLIFE 306 V4 / PAGE V3\n` +
         `Server: ${serverReady ? 'CONNECTED' : 'DISCONNECTED'} | ` +
         `Left: ${leftReady ? 'READY' : 'MISSING'} | Right: ${rightReady ? 'READY' : 'MISSING'}\n` +
         `Inputs: ${this.inputSourceSummary()}\n` +
