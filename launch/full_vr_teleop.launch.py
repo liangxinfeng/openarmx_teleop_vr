@@ -5,6 +5,7 @@ import yaml
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
+from control_center_module_lease import controller_lease
 from launch.actions import (
     DeclareLaunchArgument,
     ExecuteProcess,
@@ -207,7 +208,8 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        DeclareLaunchArgument('topic_suffix', default_value='0_345'),
+        controller_lease('vr_arm'),
+        DeclareLaunchArgument('topic_suffix', default_value='0_367'),
         DeclareLaunchArgument(
             'dry_run', default_value='true',
             description='Keep true for WebXR/IK preview without hardware output.'),
@@ -298,7 +300,7 @@ def generate_launch_description():
                 '</Discovery></Domain></CycloneDDS>')),
         DeclareLaunchArgument(
             'robot_env_python',
-            default_value='/home/ubuntu/ros2_ws/venvs/openarmx_v4_placo/bin/python'),
+            default_value='/home/ubuntu/migration367_20261118/runtime/bin/python'),
         SetEnvironmentVariable('ROS_DOMAIN_ID', ros_domain_id),
         SetEnvironmentVariable('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'),
         SetEnvironmentVariable('RMW_IMPLEMENTATION', rmw_implementation),

@@ -1,0 +1,7 @@
+{
+  "robot_id": 367,
+  "model_sha256": "18bc869a98ede3e8cf9a5f8f26f3db11a861f2e86d35c7a31a249df5d47a364e",
+  "operator_confirmation": "initial head/chest have physical clearance; model overlap only",
+  "scope": "existing initial head/chest overlap only, monotonic joint path to saved target; no new collision; target must clear head/chest",
+  "other_pairs_unchanged": true
+}

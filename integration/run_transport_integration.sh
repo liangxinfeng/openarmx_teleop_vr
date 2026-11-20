@@ -74,7 +74,7 @@ fi
 
 echo BRIDGE_READY
 set +e
-/home/ubuntu/ros2_ws/venvs/openarmx_v4_placo/bin/python \
+/home/ubuntu/migration367_20261118/runtime/bin/python \
   "$workspace/src/openarmx_teleop_vr_306_v5/integration/transport_integration_client.py" \
   --base-url https://127.0.0.1:8447
 test_rc=$?

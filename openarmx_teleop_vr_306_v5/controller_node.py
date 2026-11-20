@@ -616,7 +616,7 @@ class IndependentArmController(Node):
 
     def _declare_parameters(self):
         defaults = {
-            'topic_suffix': '0_345',
+            'topic_suffix': '0_367',
             'control_rate_hz': 100.0,
             'output_control_mode': 'velocity',
             'dry_run': True,

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=V6遥操测试-367
+Comment=双臂增量遥操 · 头显通过 HTTPS 8448 接入
+Exec=/home/ubuntu/migration367_20261118/releases/teleop-v6-afd1ad40ee86/run_v6.sh
+Path=/home/ubuntu/migration367_20261118/releases/teleop-v6-afd1ad40ee86
+Terminal=true
+Icon=applications-engineering
+Categories=Science;

@@ -1,6 +1,6 @@
 independent_arm_controller_306_v5:
   ros__parameters:
-    topic_suffix: '0_345'
+    topic_suffix: '0_367'
     control_rate_hz: 100.0
     dry_run: true
     allow_waist_in_ik: false

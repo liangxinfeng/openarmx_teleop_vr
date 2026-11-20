@@ -128,7 +128,10 @@ class RgbdColorCamera:
         }
 
     def _select_output(self):
-        from autolife_robot_sdk.utils import list_camera_shm_outputs
+        try:
+            from autolife_robot_sdk.utils import list_camera_shm_outputs
+        except ImportError:
+            from autolife_v3_camera import list_camera_shm_outputs
 
         outputs = list_camera_shm_outputs(
             self.robot_model,
@@ -147,7 +150,10 @@ class RgbdColorCamera:
         return matches[0]
 
     def _open_consumer(self):
-        from autolife_robot_sdk.utils import open_camera_shm_consumer
+        try:
+            from autolife_robot_sdk.utils import open_camera_shm_consumer
+        except ImportError:
+            from autolife_v3_camera import open_camera_shm_consumer
 
         output = self._select_output()
         self._consumer = open_camera_shm_consumer(

@@ -1,6 +1,6 @@
 independent_vr_mapper_306_v5:
   ros__parameters:
-    topic_suffix: "0_345"
+    topic_suffix: "0_367"
     dry_run: true
     # Low-latency profile: consume the latest WebXR sample at up to 90 Hz.
     command_rate: 90.0

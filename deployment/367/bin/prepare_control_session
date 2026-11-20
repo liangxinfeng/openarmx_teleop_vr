@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+state=$(systemctl --user is-active flow-service.service 2>/dev/null || true)
+if [ "$state" = active ] || [ "$state" = activating ]; then
+  printf '正在暂停原厂讲解流程，释放底盘和关节控制入口…\n'
+  systemctl --user stop flow-service.service
+fi

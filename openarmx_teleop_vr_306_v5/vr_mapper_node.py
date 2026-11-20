@@ -279,7 +279,7 @@ class IndependentVrMapper(Node):
 
     def _declare_parameters(self):
         defaults = {
-            'topic_suffix': '0_345',
+            'topic_suffix': '0_367',
             'dry_run': True,
             'command_rate': 90.0,
             'vr_timeout': 0.80,

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-V5_PYTHON="/home/ubuntu/ros2_ws/venvs/openarmx_v5_mink/bin/python"
+V5_PYTHON="/home/ubuntu/migration367_20261118/runtime/bin/python"
 if [ ! -x "$V5_PYTHON" ]; then
   echo "V5 Mink Python environment not found: $V5_PYTHON" >&2
   echo "Run scripts/setup_v5_mink_env.sh once, then rebuild this package." >&2

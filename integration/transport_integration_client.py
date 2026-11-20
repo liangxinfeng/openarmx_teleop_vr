@@ -33,7 +33,7 @@ try:
 except ImportError as exc:  # Keep --help/use errors explicit on minimal hosts.
     raise SystemExit(
         "Missing integration-test dependency: "
-        f"{exc}. Run with /home/ubuntu/ros2_ws/venvs/openarmx_v4_placo/bin/python."
+        f"{exc}. Run with /home/ubuntu/migration367_20261118/runtime/bin/python."
     ) from exc
 
 
