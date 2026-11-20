@@ -1,0 +1,122 @@
+{
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/lib": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/lib",
+  "sha256": "b26641d59f3bf6bf571c127592a90f9d6805813035356c7e76c7ad6bab022ed4"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/config": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/config",
+  "sha256": "0d382ee61a599bab892c7f1e18a4e79b5ab75b910c17bbfca8c6dcce693d7c08"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/THIRD_PARTY_LICENSES.md": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/THIRD_PARTY_LICENSES.md",
+  "sha256": "ad67bfa04d05e240dc53092292e53485ce97a2d054679345aede4e38923f4dbf"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/web": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/web",
+  "sha256": "76e10cb6efaaba3deef85bfdd5debf6c88159f99cdeb6624bd0f7902f799c6af"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/NOTICE": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/NOTICE",
+  "sha256": "7c6d8396490486daad33c635bbe0a36f403fdccb645925087ca4263552658523"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/README.md": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/README.md",
+  "sha256": "b09377a25f324d19d359851d0c23d2454c200b2090e8ca72530b637c0e5b1907"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.bash": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.bash",
+  "sha256": "d52e83ad9935db827ccd19cce18c60391329f56241eb40f9decfdd8542a569e5"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/urdf": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/urdf",
+  "sha256": "d3c298b42ff9ef54b590e2e8de4eeed48e79ae6835fc238dfbf6db6d8a927882"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.zsh": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.zsh",
+  "sha256": "855a30f07b7e8df5e811d6344edabd1f16d3243a1f237a58b80958fae4cc45a6"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.dsv": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.dsv",
+  "sha256": "dbfbb14d3130e96d66cab4465e9c4a9bb1dc46e74a898d187c7072bf8d20a9fa"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/hook": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/hook",
+  "sha256": "231e7678a949f2d19338ec4814c01ca1714b5c51b8a0c4c7b03ee89310fe0a73"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/V5_MINK.md": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/V5_MINK.md",
+  "sha256": "2a403234a7d911d419b8b97b4398ecde14da986eb32595dc5a6025ede1740c92"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.ps1": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.ps1",
+  "sha256": "8db9056ad1d3c43b4057727159035870038e2f97be3360619b76bcc34ba30ff0"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.xml": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.xml",
+  "sha256": "a5d1771891bd5ebd747d63334cae989bdf67fe6efa46ba1477d67356f81b355d"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/AI_MIGRATION_GUIDE.md": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/AI_MIGRATION_GUIDE.md",
+  "sha256": "689a917a9196faa04a116fca7c868cd10edd63ae5b59e33384c14ccd652abb01"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/V5_CHANGES.md": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/V5_CHANGES.md",
+  "sha256": "9ad1d65c109248ea142869e7f032d86f0d2195bd0f9221ba80a1bab6b849138c"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.sh": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/package.sh",
+  "sha256": "35822b4d5600d6faef6fdc95ef2509d609f08b79eeb45f9a74fd680625fe1ff6"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/requirements-mink.txt": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/requirements-mink.txt",
+  "sha256": "6d99a4b9f74a6ab872140d3c64f7a3840b850c6494c48cd353563baac0ce8ad1"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/meshes": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/meshes",
+  "sha256": "2eb89d721b8da0adcc80391367a465dd6eadbcfda4b9d89ef8b4558c11c1b855"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/ament_index/resource_index/packages/openarmx_teleop_vr_306_v5": {
+  "mode": "100644",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/ament_index/resource_index/packages/openarmx_teleop_vr_306_v5",
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/launch/full_vr_teleop.launch.py": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/overlay/openarmx_teleop_vr_306_v5/share/openarmx_teleop_vr_306_v5/launch/full_vr_teleop.launch.py",
+  "sha256": "a489b652fd00a8263cf24535c916b3042622e8263b2b297fa28c42a7d148dacb"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/entries/v5": {
+  "mode": "100644",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/entries/v5",
+  "sha256": "506925523e2af9da341990a8ae276c6ce19fb1854374b18d69e4fe5e319fd8f7"
+ },
+ "deployment/367/releases/control-center-57a757b7cd1a/src": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-57a757b7cd1a/src",
+  "sha256": "e917532416d9794732bcae20f2c3c71bd5802a2cffce6967dde9000a7e158f04"
+ },
+ "deployment/367/releases/control-center-current": {
+  "mode": "120000",
+  "source": "/home/ubuntu/migration367_20261118/releases/control-center-current",
+  "sha256": "8f0627e87362ceb8a6ea200f7e3fb3f94ba06e2cecfcdc6a9f3ec989c872165f"
+ }
+}
